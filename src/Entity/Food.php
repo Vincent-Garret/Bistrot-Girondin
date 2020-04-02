@@ -31,12 +31,11 @@ class Food
      */
     private $price;
 
-    //je lie mon entité type a mon entité food
-    //many to one car un type de plat peu en avoir plusieur
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Type", inversedBy="foods")
      */
     private $type;
+
 
     public function getId(): ?int
     {
@@ -79,21 +78,20 @@ class Food
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getType()
+    public function getType(): ?Type
     {
         return $this->type;
     }
 
-    /**
-     * @param mixed $type
-     */
-    public function setType($type): void
+    public function setType(?Type $type): self
     {
         $this->type = $type;
+
+        return $this;
     }
+    
+
+
 
 
 
