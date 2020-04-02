@@ -1,9 +1,9 @@
- {% for type in types %}
+{#Je fais une boucle fort et un if pour afficher le nom de mon type
+suivi DES noms de plats #}
+{% for type in types %}
      <h2>{{ type.type }}</h2>
-        {% for food in foods %}
-            {% if food.type.type == type.type %}
+        {% for food in type.foods %}
             <p>{{ food.name }}</p>
-            {% endif %}
         {% endfor %}
  {% endfor %}
 
