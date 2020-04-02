@@ -1,0 +1,9 @@
+ {% for type in types %}
+     <h2>{{ type.type }}</h2>
+        {% for food in foods %}
+            {% if food.type.type == type.type %}
+            <p>{{ food.name }}</p>
+            {% endif %}
+        {% endfor %}
+ {% endfor %}
+

@@ -43,7 +43,7 @@ class Type
     {
         return $this->type;
     }
-
+    //mes getter et setter generer en ligne de co avec mes relations
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -58,7 +58,7 @@ class Type
     {
         return $this->foods;
     }
-
+    //Ma fonction qui me permet de recuperer food dans un array
     public function addFood(Food $food): self
     {
         if (!$this->foods->contains($food)) {
