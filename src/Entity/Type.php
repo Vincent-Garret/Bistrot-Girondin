@@ -21,6 +21,8 @@ class Type
      */
     private $type;
 
+    //je lie mon entité type a mon entité food
+
     public function getId(): ?int
     {
         return $this->id;
