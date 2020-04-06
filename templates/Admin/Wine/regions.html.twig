@@ -1,0 +1,15 @@
+{#Je fais une boucle fort et un if pour afficher le nom de mon type
+suivi DES noms de plats #}
+
+<h2>Vos Régions : </h2>
+{% for region in regions %}
+    <p>{{ region.name }}</p>
+    {#<a href="{{ path('admin_update_appellation', {'id':appellation.id}) }}">Modifier le nom de l'appelation</a>
+    <br>
+    <a href="{{ path('admin_delete_appellation', {'id':appellation.id}) }}">Supprimer cette appellation</a>
+    {% for message in app.flashes('success') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}#}
+{% endfor %}

@@ -37,7 +37,6 @@ class FoodController extends AbstractController
      * @Route("/admin/insert/food", name="admin_insert_food")
      */
     public function insertFood(Request $request,
-                               FoodRepository $foodRepository,
                                EntityManagerInterface $entityManager)
     {
         $food = new Food();
