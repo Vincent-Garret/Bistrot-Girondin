@@ -22,9 +22,9 @@ class Food
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $destription;
+    private $description;
 
     /**
      * @ORM\Column(type="float")
@@ -54,14 +54,14 @@ class Food
         return $this;
     }
 
-    public function getDestription(): ?string
+    public function getDescription(): ?string
     {
-        return $this->destription;
+        return $this->description;
     }
 
-    public function setDestription(string $destription): self
+    public function setDescription(string $description): self
     {
-        $this->destription = $destription;
+        $this->description = $description;
 
         return $this;
     }

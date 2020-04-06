@@ -49,14 +49,14 @@ class TypeController extends AbstractController
         $type = new Type();
 
         // je créé mon formulaire, et je le lie à mon nouveau type
-        $formType = $this->createForm(TypeType::class, $type);
+        $typeForm = $this->createForm(TypeType::class, $type);
 
-        // je demande à mon formulaire $formType de gérer les données
+        // je demande à mon formulaire $typeForm de gérer les données
         // de la requête POST
-        $formType->handleRequest($request);
+        $typeForm->handleRequest($request);
 
         // si le formulaire a été envoyé, et que les données sont valides
-        if ($formType->isSubmitted() && $formType->isValid()) {
+        if ($typeForm->isSubmitted() && $typeForm->isValid()) {
             // récupère la valeur de l'input cover, donc le fichier uploadé
             // je persiste le book
             $entityManager->persist($type);
@@ -66,7 +66,7 @@ class TypeController extends AbstractController
             return $this->redirectToRoute('admin_typeList');
         }
         return $this->render('Admin/insertForm.html.twig', [
-            'formType' => $formType->createView()
+            'typeForm' => $typeForm->createView()
         ]);
 
     }
