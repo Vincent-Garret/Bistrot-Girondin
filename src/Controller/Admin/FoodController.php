@@ -38,7 +38,6 @@ class FoodController extends AbstractController
      */
     public function insertFood(Request $request,
                                FoodRepository $foodRepository,
-                               SluggerInterface $slugger,
                                EntityManagerInterface $entityManager)
     {
         $food = new Food();

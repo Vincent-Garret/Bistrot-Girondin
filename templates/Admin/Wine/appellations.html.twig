@@ -4,6 +4,9 @@ suivi DES noms de plats #}
 <h2>Vos appellations : </h2>
     {% for appellation in appellations %}
         <p>{{ appellation.name }}</p>
+        <a href="{{ path('admin_update_appellation', {'id':appellation.id}) }}">Modifier le nom de l'appelation</a>
+        <br>
+        <a href="{{ path('admin_delete_appellation', {'id':appellation.id}) }}">Supprimer cette appellation</a>
         {% for message in app.flashes('success') %}
             <div class="flash-notice">
                 {{ message }}
