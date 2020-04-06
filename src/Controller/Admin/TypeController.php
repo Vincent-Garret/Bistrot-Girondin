@@ -23,7 +23,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class TypeController extends AbstractController
 {
     /**
-     * @Route("/admin/typelist", name="admin_typeList")
+     * @Route("/admin/typelist", name="admin_type_list")
      * @param TypeRepository $typeRepository
      * @return Response
      */
@@ -31,7 +31,7 @@ class TypeController extends AbstractController
     {
         $types = $typeRepository->findAll();
 
-        return $this->render('Admin/types.html.twig', [
+        return $this->render('Admin/Food/types.html.twig', [
             'types' => $types
         ]);
     }
@@ -65,7 +65,7 @@ class TypeController extends AbstractController
             $this->addFlash('success', 'Votre type a été créé !');
             return $this->redirectToRoute('admin_typeList');
         }
-        return $this->render('Admin/insertForm.html.twig', [
+        return $this->render('Admin/Food/insertForm.html.twig', [
             'typeForm' => $typeForm->createView()
         ]);
 
@@ -111,7 +111,7 @@ class TypeController extends AbstractController
 
         $entityManager->persist($type);
         $entityManager->flush();
-        return $this->render('Admin/insertForm.html.twig',[
+        return $this->render('Admin/Food/insertForm.html.twig',[
             'formType' => $formType->createView()
         ]);
 

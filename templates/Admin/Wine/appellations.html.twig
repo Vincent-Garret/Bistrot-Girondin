@@ -1,0 +1,12 @@
+{#Je fais une boucle fort et un if pour afficher le nom de mon type
+suivi DES noms de plats #}
+
+<h2>Vos appellations : </h2>
+    {% for appellation in appellations %}
+        <p>{{ appellation.name }}</p>
+        {% for message in app.flashes('success') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}

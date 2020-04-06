@@ -26,7 +26,7 @@ class FoodController extends AbstractController
 
         $foods = $foodRepository->findAll();
         $types = $typeRepository->findAll();
-        return $this->render('Admin/foods.html.twig', [
+        return $this->render('Admin/Food/foods.html.twig', [
             'foods' => $foods,
             'types' => $types
         ]);
@@ -54,7 +54,7 @@ class FoodController extends AbstractController
             $entityManager->persist($food);
             $entityManager->flush();
         }
-        return $this->render('Admin/insertFood.html.twig',[
+        return $this->render('Admin/Food/insertFood.html.twig',[
             'foodForm' => $foodForm->createView()
         ]);
     }
@@ -93,7 +93,7 @@ class FoodController extends AbstractController
             $this->addFlash('success', 'votre plat a été modifié');
 
         }
-        return $this->render('Admin/insertFood.html.twig', [
+        return $this->render('Admin/Food/insertFood.html.twig', [
             'foodForm' => $foodForm->createView(),
         ]);
     }

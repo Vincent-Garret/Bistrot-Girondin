@@ -1,0 +1,15 @@
+{{ form_start(formType) }}
+        {# form_label permet de rendre le label d'un champs de formulaire #}
+        {{ form_label(formType.type) }}
+        {# form_widget permet de rendre l'input d'un formulaire #}
+        {{ form_widget(formType.type) }}
+        {{ form_errors(formType.type) }}
+
+        {{ form_widget(formType.submit) }}
+{{ form_end(formType) }}
+{% for message in app.flashes('success') %}
+        <div class="flash-notice">
+                {{ message }}
+        </div>
+{% endfor %}
+<a href="{{ path('admin_type_list') }}">Retour à la liste des types de plats</a>
