@@ -25,23 +25,4 @@ class HomeController extends AbstractController
     public function home(){
         return $this->render('Admin/home.html.twig');
     }
-
-    /**
-     * @Route("/admin/foodlist", name="admin_foodList")
-     * @param FoodRepository $foodRepository
-     * @return Response
-     */
-    public function foodList(FoodRepository $foodRepository, TypeRepository $typeRepository){
-
-        $foods = $foodRepository->findAll();
-        $types = $typeRepository->findAll();
-        return $this->render('Admin/foods.html.twig',[
-            'foods' => $foods,
-            'types' =>$types
-        ]);
-
-    }
-
-
-
 }

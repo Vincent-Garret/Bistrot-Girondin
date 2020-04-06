@@ -1,0 +1,10 @@
+{% for type in types %}
+    <p>{{ type.type }}</p>
+    <a href="{{ path('admin_type_delete', {'id': type.id }) }}">Supprimer ce type de plat</a>
+    <a href="{{ path('admin_type_update', {'id': type.id }) }}">Modifier le nom</a>
+    {% for message in app.flashes('success') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
