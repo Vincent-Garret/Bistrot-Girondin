@@ -4,6 +4,12 @@ suivi DES noms de plats #}
      <h2>{{ type.type }}</h2>
         {% for food in type.foods %}
             <p>{{ food.name }}</p>
+            <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
+            {% for message in app.flashes('success') %}
+                <div class="flash-notice">
+                    {{ message }}
+                </div>
+            {% endfor %}
         {% endfor %}
  {% endfor %}
 

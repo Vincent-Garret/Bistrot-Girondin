@@ -20,7 +20,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class FoodController extends AbstractController
 {
     /**
-     * @Route("/admin/foodlist", name="admin_foodList")
+     * @Route("/admin/foods", name="admin_foodList")
      * @param FoodRepository $foodRepository
      * @return Response
      */
@@ -60,6 +60,20 @@ class FoodController extends AbstractController
         return $this->render('Admin/insertFood.html.twig',[
             'foodForm' => $foodForm->createView()
         ]);
+    }
+    /**
+     * @Route("/admin/delete/{id}", name="admin_delete_food")
+     */
+    public function deleteFood(FoodRepository $foodRepository,
+                                TypeRepository $typeRepository,
+                                EntityManagerInterface $entityManager,
+                                $id){
+        $food = $foodRepository->find($id);
 
+        $entityManager->remove($food);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre plat a bien été supprimé' );
+        return $this->redirectToRoute('admin_foodList');
     }
 }
