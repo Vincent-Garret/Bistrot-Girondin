@@ -3,14 +3,11 @@
 
 namespace App\Controller\Admin;
 use App\Form\FoodType;
-use phpDocumentor\Reflection\Types\This;
 use App\Entity\Food;
 use App\Repository\FoodRepository;
 use App\Repository\TypeRepository;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,7 +17,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class FoodController extends AbstractController
 {
     /**
-     * @Route("/admin/foods", name="admin_foodList")
+     * @Route("/admin/foods", name="admin_food_list")
      * @param FoodRepository $foodRepository
      * @return Response
      */
@@ -65,7 +62,6 @@ class FoodController extends AbstractController
      * @Route("/admin/delete/{id}", name="admin_delete_food")
      */
     public function deleteFood(FoodRepository $foodRepository,
-                                TypeRepository $typeRepository,
                                 EntityManagerInterface $entityManager,
                                 $id){
         $food = $foodRepository->find($id);
@@ -74,6 +70,31 @@ class FoodController extends AbstractController
         $entityManager->flush();
 
         $this->addFlash('success', 'Votre plat a bien été supprimé' );
-        return $this->redirectToRoute('admin_foodList');
+        return $this->redirectToRoute('admin_food_list');
+    }
+    /**
+     * @Route("/admin/update/{id}", name="admin_update_food")
+     */
+    public function updateFood(FoodRepository $foodRepository,
+                               EntityManagerInterface $entityManager,
+                               Request $request,
+                               $id)
+    {
+        $food = $foodRepository->find($id);
+        $foodForm = $this->createForm(FoodType::class, $food);
+        $foodForm->handleRequest($request);
+
+        if ($foodForm->isSubmitted() && $foodForm->isValid()) {
+            //je persist le type
+            $entityManager->persist($food);
+            $entityManager->flush();
+
+            //message flash
+            $this->addFlash('success', 'votre plat a été modifié');
+
+        }
+        return $this->render('Admin/insertFood.html.twig', [
+            'foodForm' => $foodForm->createView(),
+        ]);
     }
 }
