@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Appellation;
 use App\Entity\Region;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +20,7 @@ class AppellationType extends AbstractType
                 //je choisis ici vers quelle entité
                 'class' => Region::class,
                 //je choisi aussi quelle champs dans auteur
-                'choice_label' => 'region'])
+                'choice_label' => 'name'])
             ->add('submit', SubmitType::class)
         ;
     }

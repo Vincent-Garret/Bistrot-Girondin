@@ -2,7 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Appellation;
+use App\Entity\Color;
+use App\Entity\Region;
 use App\Entity\Wine;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,8 +19,16 @@ class WineType extends AbstractType
         $builder
             ->add('name')
             ->add('price')
-            ->add('color')
-            ->add('appellation')
+            ->add('color',Entitytype::class, [
+                //je choisis ici vers quelle entité
+                'class' => Color::class,
+                //je choisi aussi quelle champs dans auteur
+                'choice_label' => 'name'])
+            ->add('appellation',Entitytype::class, [
+                //je choisis ici vers quelle entité
+                'class' => Appellation::class,
+                //je choisi aussi quelle champs dans auteur
+                'choice_label' => 'name'])
             ->add('submit', SubmitType::class)
 
         ;

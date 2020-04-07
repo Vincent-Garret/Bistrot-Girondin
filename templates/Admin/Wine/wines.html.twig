@@ -4,21 +4,32 @@
         {{ message }}
     </div>
 {% endfor %}
+
 {% for color in colors %}
     <h1>{{ color.name }}</h1>
     {% for region in regions %}
-        <h2>{{ region.name }}</h2>
-        {% for appellation in appellations %}
-            <h3>{{ appellation.name }}</h3>
-            {% for wine in appellation.wines %}
-                {% if wine.color.name == color.name and wine.region.name == region.name %}
-                <p>{{ wine.name }}</p>
-                {#<a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
-                <br>
-                <a href="{{ path('admin_delete_region', {'id':wine.id}) }}">Supprimer ce vin</a>#}
-                {% endif %}
+        {% if color.name == 'Rouge' %}
+            <h2>{{ region.name }}</h2>
+            {% for appellation in region.appellations %}
+                {% set appelationListed = false %}
+                {% for wine in appellation.wines %}
+                        {% if wine.color.id == color.id %}
+                            {% if appelationListed == false %}
+                                <h3>{{ appellation.name }}</h3>
+                            {% endif %}
+                            <p>{{ wine.name }}</p>
+                                {#<a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
+                                <br>
+                                <a href="{{ path('admin_delete_region', {'id':wine.id}) }}">Supprimer ce vin</a>#}
+                            {% set appelationListed = true %}
+                        {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+        {% endif %}
+        {#Il faudra que je continu mon if avec des else if pour les blancs et les rosés#}
     {% endfor %}
 {% endfor %}
+
+
+
 
