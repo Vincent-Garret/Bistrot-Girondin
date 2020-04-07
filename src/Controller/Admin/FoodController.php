@@ -47,7 +47,6 @@ class FoodController extends AbstractController
         $foodForm->handleRequest($request);
 
         if ($foodForm->isSubmitted() && $foodForm->isValid()) {
-            // récupère la valeur de l'input cover, donc le fichier uploadé
             // je persiste le book
             $entityManager->persist($food);
             $entityManager->flush();
