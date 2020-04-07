@@ -9,11 +9,13 @@
     <h1>{{ color.name }}</h1>
     {% for region in regions %}
         {% if color.name == 'Rouge' %}
-            <h2>{{ region.name }}</h2>
+            {% if region.appellations | length > 0 %}
+                <h2>{{ region.name }}</h2>
+            {% endif %}
             {% for appellation in region.appellations %}
                 {% set appelationListed = false %}
                 {% for wine in appellation.wines %}
-                        {% if wine.color.id == color.id %}
+                        {% if wine.color.name == 'Rouge' %}
                             {% if appelationListed == false %}
                                 <h3>{{ appellation.name }}</h3>
                             {% endif %}
@@ -27,6 +29,28 @@
             {% endfor %}
         {% endif %}
         {#Il faudra que je continu mon if avec des else if pour les blancs et les rosés#}
+        {% if color.name == 'Blanc' %}
+            {% if region.appellations | length > 0 %}
+                <h2>{{ region.name }}</h2>
+            {% endif %}
+            {% for appellation in region.appellations %}
+            {#{% set appelationListed = false %}#}
+                {% for wine in appellation.wines %}
+                    {% if wine.color.name == 'Blanc' %}
+
+                            {#{% if appelationListed == false %}#}
+                                <h3>{{ appellation.name }}</h3>
+                            {#{% endif %}#}
+
+                        <p>{{ wine.name }}</p>
+                        {#<a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
+                        <br>
+                        <a href="{{ path('admin_delete_region', {'id':wine.id}) }}">Supprimer ce vin</a>#}
+                        {#{% set appelationListed = true %}#}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
     {% endfor %}
 {% endfor %}
 
