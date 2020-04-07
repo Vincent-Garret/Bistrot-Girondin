@@ -57,7 +57,7 @@ class FoodController extends AbstractController
         ]);
     }
     /**
-     * @Route("/admin/delete/{id}", name="admin_delete_food")
+     * @Route("/admin/delete/food/{id}", name="admin_delete_food")
      */
     public function deleteFood(FoodRepository $foodRepository,
                                 EntityManagerInterface $entityManager,

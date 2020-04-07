@@ -2,14 +2,14 @@
 suivi DES noms de plats #}
 
 <h2>Vos Régions : </h2>
+{% for message in app.flashes('success') %}
+    <div class="flash-notice">
+        {{ message }}
+    </div>
+{% endfor %}
 {% for region in regions %}
     <p>{{ region.name }}</p>
-    {#<a href="{{ path('admin_update_appellation', {'id':appellation.id}) }}">Modifier le nom de l'appelation</a>
+    <a href="{{ path('admin_update_region', {'id':region.id}) }}">Modifier le nom de region</a>
     <br>
-    <a href="{{ path('admin_delete_appellation', {'id':appellation.id}) }}">Supprimer cette appellation</a>
-    {% for message in app.flashes('success') %}
-        <div class="flash-notice">
-            {{ message }}
-        </div>
-    {% endfor %}#}
+    <a href="{{ path('admin_delete_region', {'id':region.id}) }}">Supprimer cette region</a>
 {% endfor %}

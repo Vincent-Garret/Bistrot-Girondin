@@ -21,7 +21,7 @@ class RegionController extends AbstractController
     /**
      * @Route("/admin/regions", name ="admin_region_list")
      */
-    public function appellationList(RegionRepository $regionRepository)
+    public function regionList(RegionRepository $regionRepository)
     {
         $regions = $regionRepository->findAll();
         return $this->render('Admin/Wine/regions.html.twig', [
@@ -31,8 +31,7 @@ class RegionController extends AbstractController
     /**
      * @Route("/admin/insert/region", name="admin_region_insert")
      */
-    public function insertRegion(RegionRepository $regionRepository,
-                                EntityManagerInterface $entityManager,
+    public function insertRegion(EntityManagerInterface $entityManager,
                                 Request $request){
         $region = new Region();
         $regionForm = $this->createForm(RegionType::class, $region);
@@ -46,6 +45,43 @@ class RegionController extends AbstractController
             $this->addFlash('success', 'Votre region a bien été enregistré' );
         }
         return $this->render('Admin/Wine/insertRegion.html.twig',[
+            'regionForm' => $regionForm->createView()
+        ]);
+    }
+    /**
+     * @Route("/admin/delete/region/{id}", name="admin_delete_region")
+     */
+    public function deleteRegion(RegionRepository $regionRepository,
+                                EntityManagerInterface $entityManager,
+                                $id){
+        $region = $regionRepository->find($id);
+
+        $entityManager->remove($region);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre region a bien été supprimé' );
+        return $this->redirectToRoute('admin_region_list');
+    }
+    /**
+     * @Route("/admin/update/region/{id}", name="admin_update_region")
+     */
+    public function updateRegion(RegionRepository $regionRepository,
+                                    EntityManagerInterface $entityManager,
+                                    Request $request,
+                                    $id){
+        $region = $regionRepository->find($id);
+        $regionForm = $this->createForm(RegionType::class, $region);
+        $regionForm->handleRequest($request);
+
+        if ($regionForm->isSubmitted() && $regionForm->isValid()) {
+            //je persist le type
+            $entityManager->persist($region);
+            $entityManager->flush();
+
+            //message flash
+            $this->addFlash('success', 'votre region a été modifié');
+        }
+        return $this->render('Admin/Wine/insertRegion.html.twig', [
             'regionForm' => $regionForm->createView()
         ]);
     }
