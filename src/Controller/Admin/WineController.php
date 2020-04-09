@@ -34,7 +34,6 @@ class WineController extends AbstractController
         $regions = $regionRepository->findAll();
         $colors = $colorRepository->findAll();
         $appellations = $appellationRepository->findAll();
-
         return $this->render('Admin/Wine/wines.html.twig',[
             'wines' => $wines,
             'regions' => $regions,
@@ -63,6 +62,45 @@ class WineController extends AbstractController
             $this->addFlash('success', 'Votre vin a bien été ajouté !');
         }
         return $this->render('Admin/Wine/insertWine.html.twig',[
+            'wineForm' => $wineForm->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/admin/delete/wine/{id}", name="admin_delete_wine")
+     */
+    public function deleteWine(WineRepository $wineRepository,
+                               EntityManagerInterface $entityManager,
+                                $id){
+
+        $wine = $wineRepository->find($id);
+
+        $entityManager->remove($wine);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre vin à bien été effacé');
+        return $this->redirectToRoute('admin_wine_list');
+    }
+    /**
+     * @Route("/admin/updtate/wine/{id}", name="admin_update_wine")
+     */
+    public function updateWine(WineRepository $wineRepository,
+                                EntityManagerInterface $entityManager,
+                                Request $request,
+                                $id){
+        $wine = $wineRepository->find($id);
+        $wineForm = $this->createForm(WineType::class, $wine);
+        $wineForm->handleRequest($request);
+
+        if ($wineForm->isSubmitted() && $wineForm->isValid()) {
+            //je persist le type
+            $entityManager->persist($wine);
+            $entityManager->flush();
+
+            //message flash
+            $this->addFlash('success', 'votre vin a été modifié');
+        }
+        return $this->render('Admin/Wine/insertWine.html.twig', [
             'wineForm' => $wineForm->createView()
         ]);
     }

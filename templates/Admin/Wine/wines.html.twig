@@ -20,9 +20,9 @@
                                 <h3>{{ appellation.name }}</h3>
                             {% endif %}
                             <p>{{ wine.name }}</p>
-                                {#<a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
+                                <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
                                 <br>
-                                <a href="{{ path('admin_delete_region', {'id':wine.id}) }}">Supprimer ce vin</a>#}
+                                <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer ce vin</a>
                             {% set appelationListed = true %}
                         {% endif %}
                 {% endfor %}
@@ -45,7 +45,7 @@
                         <p>{{ wine.name }}</p>
                         {#<a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
                         <br>
-                        <a href="{{ path('admin_delete_region', {'id':wine.id}) }}">Supprimer ce vin</a>#}
+                        <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer ce vin</a>#}
                         {#{% set appelationListed = true %}#}
                     {% endif %}
                 {% endfor %}
