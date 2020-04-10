@@ -1,0 +1,25 @@
+{{ form_start(reservationForm) }}
+        {# form_label permet de rendre le label d'un champs de formulaire #}
+        {{ form_label(reservationForm.name) }}
+        {# form_widget permet de rendre l'input d'un formulaire #}
+        {{ form_widget(reservationForm.name) }}
+        {{ form_errors(reservationForm.name) }}
+
+        {{ form_label(reservationForm.lastName) }}
+        {{ form_widget(reservationForm.lastName) }}
+        {{ form_errors(reservationForm.lastName) }}
+
+        {{ form_label(reservationForm.number) }}
+        {{ form_widget(reservationForm.number) }}
+        {{ form_errors(reservationForm.number) }}
+
+        {{ form_label(reservationForm.time) }}
+        {{ form_widget(reservationForm.time) }}
+        {{ form_errors(reservationForm.time) }}
+
+        {{ form_label(reservationForm.commentary) }}
+        {{ form_widget(reservationForm.commentary) }}
+        {{ form_errors(reservationForm.commentary) }}
+
+        {{ form_widget(reservationForm.submit) }}
+{{ form_end(reservationForm) }}

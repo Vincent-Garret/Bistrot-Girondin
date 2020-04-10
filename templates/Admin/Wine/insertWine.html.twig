@@ -17,6 +17,10 @@
         {{ form_widget(wineForm.price) }}
         {{ form_errors(wineForm.price) }}
 
+        {{ form_label(wineForm.commentary) }}
+        {{ form_widget(wineForm.commentary) }}
+        {{ form_errors(wineForm.commentary) }}
+
         {{ form_widget(wineForm.submit) }}
 {{ form_end(wineForm) }}
 {% for message in app.flashes('success') %}
