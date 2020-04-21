@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="FR">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
+    </head>
+    <body>
+        <header class="baseHeader xLarge-12">
+            <img src=" {{ asset('img/logo.png') }} " alt="" class="xLarge-2">
+            <ul class="listHeader xLarge-8">
+                <li>Accueil</li>
+                <li>Les vins</li>
+                <li>Les plats</li>
+                <li>Mes réservations</li>
+            </ul>
+        </header>
+                {% block content %}
+                {% endblock %}
+        <footer class="baseFooter">
+            <ul class="listFooter xLarge-12">
+                <li>Accueil</li>
+                <li>Les vins</li>
+                <li>Les plats</li>
+                <li>Mes réservations</li>
+            </ul>
+        </footer>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

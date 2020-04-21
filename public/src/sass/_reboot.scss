@@ -5,6 +5,7 @@ h4,
 h5,
 h6 {
   font-family: 'bangersregular', sans-serif;
+  text-align: center;
 }
 
 p,
@@ -26,8 +27,9 @@ em {
   text-decoration: none;
 }
 
-p {
-  color: #ef5734;
+p,
+h1 {
+  color: $headerText;
 }
 
 ul {
@@ -57,10 +59,15 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ef5734;
+  background-color: $headerText;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #F1F1F1;
+}
+
+body{
+  margin: 0 auto;
+  background-color: black;
 }

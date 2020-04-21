@@ -4,5 +4,35 @@
 @import "reboot";
 @import "animate";
 
-
-
+.baseHeader,
+.baseFooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $headerColor;
+  color: $headerText;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.listHeader,
+.listFooter{
+  display: flex;
+  justify-content: space-around;
+}
+.reservations{
+  display: flex;
+  justify-content: space-around;
+}
+.reservation{
+  border: 1px solid $headerText;
+  padding-left: 5px;
+  margin: 15px auto;
+}
+#icon-smiling-face{
+  width: 45px;
+}
+.titreResa{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

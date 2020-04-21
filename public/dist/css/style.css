@@ -343,6 +343,7 @@ h4,
 h5,
 h6 {
   font-family: "bangersregular", sans-serif;
+  text-align: center;
 }
 
 p,
@@ -364,8 +365,9 @@ em {
   text-decoration: none;
 }
 
-p {
-  color: #ef5734;
+p,
+h1 {
+  color: #edd786;
 }
 
 ul {
@@ -395,12 +397,17 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ef5734;
+  background-color: #edd786;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #F1F1F1;
+}
+
+body {
+  margin: 0 auto;
+  background-color: black;
 }
 
 /*!
@@ -3442,6 +3449,43 @@ a:hover {
     -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
   }
+}
+.baseHeader,
+.baseFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(47, 44, 44, 0.8);
+  color: #edd786;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.listHeader,
+.listFooter {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reservations {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reservation {
+  border: 1px solid #edd786;
+  padding-left: 5px;
+  margin: 15px auto;
+}
+
+#icon-smiling-face {
+  width: 45px;
+}
+
+.titreResa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
