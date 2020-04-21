@@ -21,9 +21,18 @@
         {{ form_widget(reservationForm.mail) }}
         {{ form_errors(reservationForm.mail) }}
 
+        {{ form_label(reservationForm.telephone) }}
+        {{ form_widget(reservationForm.telephone) }}
+        {{ form_errors(reservationForm.telephone) }}
+
         {{ form_label(reservationForm.commentary) }}
         {{ form_widget(reservationForm.commentary) }}
         {{ form_errors(reservationForm.commentary) }}
 
         {{ form_widget(reservationForm.submit) }}
+        {% for message in app.flashes('success') %}
+                <div class="flash-notice">
+                        {{ message }}
+                </div>
+        {% endfor %}
 {{ form_end(reservationForm) }}

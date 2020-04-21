@@ -46,6 +46,11 @@ class Reservation
      */
     private $mail;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $telephone;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +124,18 @@ class Reservation
     public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?int
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(int $telephone): self
+    {
+        $this->telephone = $telephone;
 
         return $this;
     }

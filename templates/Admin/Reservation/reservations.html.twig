@@ -1,4 +1,10 @@
 {% for reservation in reservations %}
-<p>{{ reservation.name }}</p>
-<p>{{ reservation.lastName }}</p>
+    <p>{{ reservation.name }} {{ reservation.lastName }}</p>
+    <p>{{ reservation.time | date}}</p>
+    <p>{{ reservation.mail }}</p>
+    <p>0{{ reservation.telephone }}</p>
+    <p>{{ reservation.number }}</p>
+    {% if reservation.commentary %}
+        <p>{{ reservation.commentary }}</p>
+    {% endif %}
 {% endfor %}
