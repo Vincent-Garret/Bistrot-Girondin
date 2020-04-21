@@ -42,6 +42,8 @@ class ReservationController extends AbstractController
             // je persiste
             $entityManager->persist($reservation);
             $entityManager->flush();
+            
+
             $this->addFlash('success', 'Votre vin a bien été enregistré !');
         }
         return $this->render('Front/Reservation.html.twig',[
