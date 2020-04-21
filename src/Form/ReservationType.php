@@ -25,6 +25,7 @@ class ReservationType extends AbstractType
                     'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
                 ]
             ])
+            ->add('mail')
             ->add('commentary')
             ->add('submit', SubmitType::class)
         ;

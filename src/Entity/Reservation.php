@@ -41,6 +41,11 @@ class Reservation
      */
     private $commentary;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mail;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Reservation
     public function setCommentary(?string $commentary): self
     {
         $this->commentary = $commentary;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
 
         return $this;
     }

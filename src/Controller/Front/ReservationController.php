@@ -26,7 +26,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/Reservation", name="Reservation")
+     * @Route("/reservation", name="Reservation")
      */
     public function reservation(Request $request,
                                 EntityManagerInterface $entityManager,
