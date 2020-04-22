@@ -29,7 +29,7 @@ em {
 
 p,
 h1 {
-  color: $headerText;
+  color: $jauneText;
 }
 
 ul {
@@ -38,10 +38,11 @@ ul {
 
 li {
   list-style: none;
+  font-size: 20px;
 }
 
 a {
-  color: #F1F1F1;
+  color: $jauneText;
   transition: all linear 0.15s;
 }
 
@@ -59,7 +60,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $headerText;
+  background-color: $vertPrimaire;
   border-radius: 10px;
 }
 
@@ -69,5 +70,4 @@ a:hover {
 
 body{
   margin: 0 auto;
-  background-color: black;
 }

@@ -4,6 +4,7 @@
 namespace App\Controller\Admin;
 
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\ReservationRepository;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/admin/reservation", name="amin_reservation_list")
+     * @Route("/admin/reservation", name="admin_reservation_list")
      */
     public function reservationList(ReservationRepository $reservationRepository){
 
@@ -20,5 +21,20 @@ class ReservationController extends AbstractController
         return $this->render('Admin/Reservation/reservations.html.twig', [
             'reservations' => $reservations
             ]);
+    }
+
+    /**
+     * @Route("/admin/delete/reservation/{id}", name="admin_reservation_delete")
+     */
+    public function deleteReservation(ReservationRepository $reservationRepository,
+                                        EntityManagerInterface $entityManager
+                                        ,$id){
+        $reservation = $reservationRepository->find($id);
+
+        $entityManager->remove($reservation);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre reservation a bien été supprimée' );
+        return $this->redirectToRoute('admin_reservation_list');
     }
 }

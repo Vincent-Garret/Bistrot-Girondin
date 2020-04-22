@@ -7,26 +7,25 @@
 .baseHeader,
 .baseFooter{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $headerColor;
-  color: $headerText;
-  padding-bottom: 5px;
+  justify-content: center;
+  background-color: $vertPrimaire;
+  color: $jauneText;
   padding-top: 5px;
 }
 .listHeader,
 .listFooter{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .reservations{
   display: flex;
   justify-content: space-around;
 }
 .reservation{
-  border: 1px solid $headerText;
-  padding-left: 5px;
+  border: 1px solid $jauneText;
   margin: 15px auto;
+  border-radius: 8px;
 }
 #icon-smiling-face{
   width: 45px;
@@ -35,4 +34,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: $vertPrimaire;
+  color: $jauneText;
+  margin-top: 0;
+  padding-left: 0;
+  border-radius: 8px 8px 0 0;
+  box-shadow: $boxShadowIn;
 }
+.baseFooter{
+  margin-top: 150px;
+}
+

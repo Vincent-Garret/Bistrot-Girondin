@@ -1,6 +1,11 @@
 {% extends 'Admin/base.html.twig' %}
     {% block content %}
         <h1>Vos Réservations :</h1>
+        {% for message in app.flashes('success') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="reservations">
             {% for reservation in reservations %}
                 <div class="reservation xLarge-3">
@@ -10,13 +15,16 @@
                         </svg>
                         {{ reservation.name }} {{ reservation.lastName }}
                     </p>
-                    <p>Nombre de personnes : {{ reservation.number }}</p>
-                    <p>Date et heure : {{ reservation.time | date}}</p>
-                    <p>Mail : {{ reservation.mail }}</p>
-                    <p>Téléphone : 0{{ reservation.telephone }}</p>
-                    {% if reservation.commentary %}
-                        <p>Commentaire : {{ reservation.commentary }}</p>
-                    {% endif %}
+                    <div class="info">
+                        <p>Nombre de personnes : {{ reservation.number }}</p>
+                        <p>Date et heure : {{ reservation.time | date}}</p>
+                        <p>Mail : {{ reservation.mail }}</p>
+                        <p>Téléphone : 0{{ reservation.telephone }}</p>
+                        {% if reservation.commentary %}
+                            <p>Commentaire : {{ reservation.commentary }}</p>
+                        {% endif %}
+                        <a href=" {{ path('admin_reservation_delete', {'id': reservation.id }) }}">Supprimer cette réservation</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
