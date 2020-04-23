@@ -60,7 +60,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $vertPrimaire;
+  background-color: $jauneText;
   border-radius: 10px;
 }
 
@@ -81,4 +81,9 @@ body{
 }
 .wine{
   margin-left: 25px;
+}
+
+.listHeader li:hover,
+.listFooter li:hover{
+  font-size: 23px;
 }

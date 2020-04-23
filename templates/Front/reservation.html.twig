@@ -1,38 +1,47 @@
-{{ form_start(reservationForm) }}
-        {# form_label permet de rendre le label d'un champs de formulaire #}
-        {{ form_label(reservationForm.name) }}
-        {# form_widget permet de rendre l'input d'un formulaire #}
-        {{ form_widget(reservationForm.name) }}
-        {{ form_errors(reservationForm.name) }}
-
-        {{ form_label(reservationForm.lastName) }}
-        {{ form_widget(reservationForm.lastName) }}
-        {{ form_errors(reservationForm.lastName) }}
-
-        {{ form_label(reservationForm.number) }}
-        {{ form_widget(reservationForm.number) }}
-        {{ form_errors(reservationForm.number) }}
-
-        {{ form_label(reservationForm.time) }}
-        {{ form_widget(reservationForm.time) }}
-        {{ form_errors(reservationForm.time) }}
-
-        {{ form_label(reservationForm.mail) }}
-        {{ form_widget(reservationForm.mail) }}
-        {{ form_errors(reservationForm.mail) }}
-
-        {{ form_label(reservationForm.telephone) }}
-        {{ form_widget(reservationForm.telephone) }}
-        {{ form_errors(reservationForm.telephone) }}
-
-        {{ form_label(reservationForm.commentary) }}
-        {{ form_widget(reservationForm.commentary) }}
-        {{ form_errors(reservationForm.commentary) }}
-
-        {{ form_widget(reservationForm.submit) }}
-        {% for message in app.flashes('success') %}
-                <div class="flash-notice">
-                        {{ message }}
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
+        <div class="resaForm xLarge-9">
+                <div class="xLarge-6 imgForm">
+                        <img src="{{ asset('img/form.jpg') }}" alt="" class="img-fluid">
                 </div>
-        {% endfor %}
-{{ form_end(reservationForm) }}
+            {{ form_start(reservationForm, {'attr': {'class': 'frontForm xLarge-6'}}) }}
+                <h1>Votre Réservation</h1>
+            {# form_label permet de rendre le label d'un champs de formulaire #}
+                    {{ form_label(reservationForm.name) }}
+                    {# form_widget permet de rendre l'input d'un formulaire #}
+                    {{ form_widget(reservationForm.name) }}
+                    {{ form_errors(reservationForm.name) }}
+
+                    {{ form_label(reservationForm.lastName) }}
+                    {{ form_widget(reservationForm.lastName) }}
+                    {{ form_errors(reservationForm.lastName) }}
+
+                    {{ form_label(reservationForm.number) }}
+                    {{ form_widget(reservationForm.number) }}
+                    {{ form_errors(reservationForm.number) }}
+
+                    {{ form_label(reservationForm.time) }}
+                    {{ form_widget(reservationForm.time) }}
+                    {{ form_errors(reservationForm.time) }}
+
+                    {{ form_label(reservationForm.mail) }}
+                    {{ form_widget(reservationForm.mail) }}
+                    {{ form_errors(reservationForm.mail) }}
+
+                    {{ form_label(reservationForm.telephone) }}
+                    {{ form_widget(reservationForm.telephone) }}
+                    {{ form_errors(reservationForm.telephone) }}
+
+                    {{ form_label(reservationForm.commentary) }}
+                    {{ form_widget(reservationForm.commentary) }}
+                    {{ form_errors(reservationForm.commentary) }}
+
+                    {{ form_widget(reservationForm.submit) }}
+                        {% for message in app.flashes('success') %}
+                                <div class="flash-notice">
+                                        {{ message }}
+                                </div>
+                        {% endfor %}
+                {{ form_end(reservationForm) }}
+        </div>
+    {% endblock %}

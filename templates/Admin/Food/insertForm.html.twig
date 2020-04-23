@@ -1,14 +1,16 @@
 {% extends 'Admin/base.html.twig' %}
     {% block content %}
-        {{ form_start(typeForm) }}
-                {# form_label permet de rendre le label d'un champs de formulaire #}
-                {{ form_label(typeForm.type) }}
-                {# form_widget permet de rendre l'input d'un formulaire #}
-                {{ form_widget(typeForm.type) }}
-                {{ form_errors(typeForm.type) }}
+        <div class="divForm">
+            {{ form_start(typeForm, {'attr': {'class': 'form large-4 xLarge-4'}}) }}
+                    {# form_label permet de rendre le label d'un champs de formulaire #}
+                    {{ form_label(typeForm.type) }}
+                    {# form_widget permet de rendre l'input d'un formulaire #}
+                    {{ form_widget(typeForm.type) }}
+                    {{ form_errors(typeForm.type) }}
 
-                {{ form_widget(typeForm.submit) }}
-        {{ form_end(typeForm) }}
+                    {{ form_widget(typeForm.submit) }}
+            {{ form_end(typeForm) }}
+        </div>
         {% for message in app.flashes('success') %}
                 <div class="flash-notice">
                         {{ message }}

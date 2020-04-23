@@ -11,6 +11,7 @@
   background-color: $vertPrimaire;
   color: $jauneText;
   padding-top: 5px;
+  height: 15vh;
 }
 .listHeader,
 .listFooter{
@@ -41,7 +42,66 @@
   border-radius: 8px 8px 0 0;
   box-shadow: $boxShadowIn;
 }
-.baseFooter{
-  margin-top: 150px;
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $vertPrimaire;
+  margin: 50px 0;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  background-color: $jauneText;
+}
+
+.frontForm label,
+.form label{
+  color: $vertPrimaire;
+  font-size: 20px;
+}
+.divForm{
+  display: flex;
+  justify-content: center;
+}
+
+.frontForm button,
+.form button{
+  background-color: $vertSecondaire;
+  Border : 1px solid $vertSecondaire;
+  Color : white;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 30%;
+  cursor: pointer;
+  box-shadow: $boxShadowIn;
+}
+
+.resaForm{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid $vertPrimaire;
+  border-radius: 8px;
+  background-color: $jauneText;
+  margin: 20px auto;
+  box-shadow: $boxShadowIn;
+}
+.frontForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  padding-bottom: 10px;
+}
+.imgForm{
+  display: flex;
+}
+.frontForm h1{
+  color: $vertPrimaire;
+}
+.frontForm label{
+  text-align: left;
 }
 

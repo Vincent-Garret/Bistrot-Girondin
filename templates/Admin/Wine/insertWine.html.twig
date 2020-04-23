@@ -1,26 +1,28 @@
 {% extends 'Admin/base.html.twig' %}
     {% block content %}
-        {{ form_start(wineForm) }}
-                {# form_label permet de rendre le label d'un champs de formulaire #}
-                {{ form_label(wineForm.name) }}
-                {# form_widget permet de rendre l'input d'un formulaire #}
-                {{ form_widget(wineForm.name) }}
-                {{ form_errors(wineForm.name) }}
+        <div class="divForm">
+            {{ form_start(wineForm, {'attr': {'class': 'form large-4 xLarge-4'}}) }}
+                    {# form_label permet de rendre le label d'un champs de formulaire #}
+                    {{ form_label(wineForm.name) }}
+                    {# form_widget permet de rendre l'input d'un formulaire #}
+                    {{ form_widget(wineForm.name) }}
+                    {{ form_errors(wineForm.name) }}
 
-                {{ form_label(wineForm.color) }}
-                {{ form_widget(wineForm.color) }}
-                {{ form_errors(wineForm.color) }}
+                    {{ form_label(wineForm.color) }}
+                    {{ form_widget(wineForm.color) }}
+                    {{ form_errors(wineForm.color) }}
 
-                {{ form_label(wineForm.appellation) }}
-                {{ form_widget(wineForm.appellation) }}
-                {{ form_errors(wineForm.appellation) }}
+                    {{ form_label(wineForm.appellation) }}
+                    {{ form_widget(wineForm.appellation) }}
+                    {{ form_errors(wineForm.appellation) }}
 
-                {{ form_label(wineForm.price) }}
-                {{ form_widget(wineForm.price) }}
-                {{ form_errors(wineForm.price) }}
+                    {{ form_label(wineForm.price) }}
+                    {{ form_widget(wineForm.price) }}
+                    {{ form_errors(wineForm.price) }}
 
-                {{ form_widget(wineForm.submit) }}
-        {{ form_end(wineForm) }}
+                    {{ form_widget(wineForm.submit) }}
+            {{ form_end(wineForm) }}
+        </div>
         {% for message in app.flashes('success') %}
             <div class="flash-notice">
                 {{ message }}
