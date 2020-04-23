@@ -1,20 +1,23 @@
-{{ form_start(appellationForm) }}
-        {# form_label permet de rendre le label d'un champs de formulaire #}
-        {{ form_label(appellationForm.name) }}
-        {# form_widget permet de rendre l'input d'un formulaire #}
-        {{ form_widget(appellationForm.name) }}
-        {{ form_errors(appellationForm.name) }}
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
+        {{ form_start(appellationForm) }}
+                {# form_label permet de rendre le label d'un champs de formulaire #}
+                {{ form_label(appellationForm.name) }}
+                {# form_widget permet de rendre l'input d'un formulaire #}
+                {{ form_widget(appellationForm.name) }}
+                {{ form_errors(appellationForm.name) }}
 
-        {{ form_label(appellationForm.region) }}
-        {# form_widget permet de rendre l'input d'un formulaire#}
-        {{ form_widget(appellationForm.region) }}
-        {{ form_errors(appellationForm.region) }}
+                {{ form_label(appellationForm.region) }}
+                {# form_widget permet de rendre l'input d'un formulaire#}
+                {{ form_widget(appellationForm.region) }}
+                {{ form_errors(appellationForm.region) }}
 
-        {{ form_widget(appellationForm.submit) }}
-{{ form_end(appellationForm) }}
-{% for message in app.flashes('success') %}
-    <div class="flash-notice">
-        {{ message }}
-    </div>
-{% endfor %}
-<a href="{{ path('admin_appellation_list') }}">Retour à la liste des appellations</a>
+                {{ form_widget(appellationForm.submit) }}
+        {{ form_end(appellationForm) }}
+        {% for message in app.flashes('success') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <a href="{{ path('admin_appellation_list') }}">Retour à la liste des appellations</a>
+    {% endblock %}

@@ -37,7 +37,7 @@ class TypeController extends AbstractController
     }
 
     /**
-     * @Route("admin/type/insert", name="admin_type_insert")
+     * @Route("admin/insert/type", name="admin_type_insert")
      */
     public function insertType(
         Request $request,
@@ -63,7 +63,7 @@ class TypeController extends AbstractController
             $entityManager->flush();
             // j'ajoute un message "flash"
             $this->addFlash('success', 'Votre type a été créé !');
-            return $this->redirectToRoute('admin_typeList');
+            return $this->redirectToRoute('admin_type_list');
         }
         return $this->render('Admin/Food/insertForm.html.twig', [
             'typeForm' => $typeForm->createView()

@@ -1,15 +1,18 @@
-{{ form_start(regionForm) }}
-        {# form_label permet de rendre le label d'un champs de formulaire #}
-        {{ form_label(regionForm.name) }}
-        {# form_widget permet de rendre l'input d'un formulaire #}
-        {{ form_widget(regionForm.name) }}
-        {{ form_errors(regionForm.name) }}
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
+        {{ form_start(regionForm) }}
+                {# form_label permet de rendre le label d'un champs de formulaire #}
+                {{ form_label(regionForm.name) }}
+                {# form_widget permet de rendre l'input d'un formulaire #}
+                {{ form_widget(regionForm.name) }}
+                {{ form_errors(regionForm.name) }}
 
-        {{ form_widget(regionForm.submit) }}
-{{ form_end(regionForm) }}
-{% for message in app.flashes('success') %}
-    <div class="flash-notice">
-        {{ message }}
-    </div>
-{% endfor %}
-<a href="{{ path('admin_region_list') }}">Retour à la liste des régions</a>
+                {{ form_widget(regionForm.submit) }}
+        {{ form_end(regionForm) }}
+        {% for message in app.flashes('success') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <a href="{{ path('admin_region_list') }}">Retour à la liste des régions</a>
+    {% endblock %}

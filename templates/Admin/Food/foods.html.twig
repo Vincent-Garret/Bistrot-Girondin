@@ -1,16 +1,22 @@
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
 {#Je fais une boucle fort et un if pour afficher le nom de mon type
 suivi DES noms de plats #}
-{% for type in types %}
-     <h2>{{ type.type }}</h2>
-        {% for food in type.foods %}
-            <p>{{ food.name }}</p>
-            <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
-            <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier le nom de ce plat</a>
-            {% for message in app.flashes('success') %}
-                <div class="flash-notice">
-                    {{ message }}
-                </div>
+    {% for type in types %}
+         <h2>{{ type.type }}</h2>
+            {% for food in type.foods %}
+                <p>{{ food.name }}
+                    <span class="modif">
+                        <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
+                        <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier le nom de ce plat</a>
+                    </span>
+                </p>
+                {% for message in app.flashes('success') %}
+                    <div class="flash-notice">
+                        {{ message }}
+                    </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
- {% endfor %}
+     {% endfor %}
+{% endblock %}
 

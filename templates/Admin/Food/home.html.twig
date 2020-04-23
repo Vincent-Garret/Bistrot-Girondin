@@ -1,6 +1,10 @@
- <h1>Bienvenue sur l'acceuil de l'admin du site</h1>
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
+    <h1>Bienvenue sur l'acceuil de l'admin du site</h1>
 
- <a href="{{ path('admin_food_list') }}">Voir les plats</a>
- <br>
- <a href="{{ path('admin_typeList') }}">Voir les types de plats</a>
+     <a href="{{ path('admin_food_list') }}">Voir les plats</a>
+     <br>
+     <a href="{{ path('admin_type_list') }}">Voir les types de plats</a>
+    {% endblock %}
+
 

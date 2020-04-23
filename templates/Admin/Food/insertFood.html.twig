@@ -1,27 +1,30 @@
-{{ form_start(foodForm) }}
-        {# form_label permet de rendre le label d'un champs de formulaire #}
-        {{ form_label(foodForm.name) }}
-        {# form_widget permet de rendre l'input d'un formulaire #}
-        {{ form_widget(foodForm.name) }}
-        {{ form_errors(foodForm.name) }}
+{% extends 'Admin/base.html.twig' %}
+    {% block content %}
+        {{ form_start(foodForm) }}
+                {# form_label permet de rendre le label d'un champs de formulaire #}
+                {{ form_label(foodForm.name) }}
+                {# form_widget permet de rendre l'input d'un formulaire #}
+                {{ form_widget(foodForm.name) }}
+                {{ form_errors(foodForm.name) }}
 
-        {{ form_label(foodForm.description) }}
-        {{ form_widget(foodForm.description) }}
-        {{ form_errors(foodForm.description) }}
+                {{ form_label(foodForm.description) }}
+                {{ form_widget(foodForm.description) }}
+                {{ form_errors(foodForm.description) }}
 
-        {{ form_label(foodForm.price) }}
-        {{ form_widget(foodForm.price) }}
-        {{ form_errors(foodForm.price) }}
+                {{ form_label(foodForm.price) }}
+                {{ form_widget(foodForm.price) }}
+                {{ form_errors(foodForm.price) }}
 
-        {{ form_label(foodForm.type) }}
-        {{ form_widget(foodForm.type) }}
-        {{ form_errors(foodForm.type) }}
+                {{ form_label(foodForm.type) }}
+                {{ form_widget(foodForm.type) }}
+                {{ form_errors(foodForm.type) }}
 
-        {{ form_widget(foodForm.submit) }}
-{{ form_end(foodForm) }}
-{% for message in app.flashes('success') %}
-        <div class="flash-notice">
-                {{ message }}
-        </div>
-{% endfor %}
-<a href="{{ path('admin_food_list') }}">Retour à la liste des plats</a>
+                {{ form_widget(foodForm.submit) }}
+        {{ form_end(foodForm) }}
+        {% for message in app.flashes('success') %}
+                <div class="flash-notice">
+                        {{ message }}
+                </div>
+        {% endfor %}
+        <a href="{{ path('admin_food_list') }}">Retour à la liste des plats</a>
+        {% endblock %}

@@ -23,6 +23,6 @@ class HomeController extends AbstractController
      *@Route("/admin/home", name="admin_home")
      */
     public function home(){
-        return $this->render('Admin/home.html.twig');
+        return $this->render('Admin/Food/home.html.twig');
     }
 }
