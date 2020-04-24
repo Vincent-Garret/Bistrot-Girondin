@@ -101,7 +101,15 @@
 .frontForm h1{
   color: $vertPrimaire;
 }
-.frontForm label{
-  text-align: left;
+
+.frontForm input{
+  border: 1px solid $inputBorder;
+  border-radius: 6px;
+}
+.para1,
+.para2{
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
