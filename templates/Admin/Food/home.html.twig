@@ -1,7 +1,21 @@
 {% extends 'Admin/base.html.twig' %}
     {% block content %}
-    <h1>Bienvenue sur l'acceuil de l'admin du site</h1>
-
+    <h1>Bienvenue sur l'accueil de l'admin du site</h1>
+        <h2>Ici vous pouvez gerer :</h2>
+        <div class="accueil">
+            <div class="xLarge-3">
+                <h3>Vos Vins</h3>
+                <a href="{{ path('admin_wine_list') }}"><img src="{{ asset('img/vinAdmin.jpg') }}" alt="" class="img-fluid"></a>
+            </div>
+            <div class="xLarge-3">
+                <h3>Vos Plats</h3>
+                <a href="{{ path('admin_food_list') }}"><img src="{{ asset('img/platAdmin.jpg') }}" alt="" class="img-fluid"></a>
+            </div>
+            <div class="xLarge-3">
+                <h3>Vos réservations</h3>
+                <a href="{{ path('admin_reservation_list') }}"><img src="{{ asset('img/resaAdmin.jpg') }}" alt="" class="img-fluid"></a>
+            </div>
+        </div>
      <a href="{{ path('admin_food_list') }}">Voir les plats</a>
      <br>
      <a href="{{ path('admin_type_list') }}">Voir les types de plats</a>

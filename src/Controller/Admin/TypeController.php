@@ -37,7 +37,7 @@ class TypeController extends AbstractController
     }
 
     /**
-     * @Route("admin/insert/type", name="admin_type_insert")
+     * @Route("admin/insert/type", name="admin_insert_type")
      */
     public function insertType(
         Request $request,

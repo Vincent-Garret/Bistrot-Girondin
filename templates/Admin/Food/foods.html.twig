@@ -2,21 +2,29 @@
     {% block content %}
 {#Je fais une boucle fort et un if pour afficher le nom de mon type
 suivi DES noms de plats #}
+        <div class="foodList xLarge-6">
+            <ul>
+                <li><a href="{{ path('admin_insert_food') }}">Ajouter un nouveau plat</a></li>
+                <li><a href="{{ path('admin_insert_type') }}">Ajouter un nouveau type de plats</a></li>
+            </ul>
+        </div>
     {% for type in types %}
-         <h2>{{ type.type }}</h2>
-            {% for food in type.foods %}
-                <p>{{ food.name }}
-                    <span class="modif">
-                        <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
-                        <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier le nom de ce plat</a>
-                    </span>
-                </p>
-                {% for message in app.flashes('success') %}
-                    <div class="flash-notice">
-                        {{ message }}
-                    </div>
+        <div class="xLarge-10 foodList">
+             <h2>{{ type.type | upper }}</h2>
+                {% for food in type.foods %}
+                    <p class="food">{{ food.name }} : {{ food.price }} &euro;
+                        <span class="modif">
+                            <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
+                            <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier le nom de ce plat</a>
+                        </span>
+                    </p>
+                    {% for message in app.flashes('success') %}
+                        <div class="flash-notice">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+        </div>
      {% endfor %}
 {% endblock %}
 

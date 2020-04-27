@@ -21,6 +21,7 @@
 }
 .reservations{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 .reservation{
@@ -113,3 +114,24 @@
   margin-bottom: 20px;
 }
 
+.accueil{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wine, .food{
+  text-align: center;
+}
+.foodList, .addList{
+  border: 2px solid $vertPrimaire;
+  border-radius: 8px;
+  margin: 5% auto;
+}
+.foodList li, .addList li{
+  text-align: center;
+}
+.foodList h2{
+  letter-spacing: 4px;
+  font-size: 30px;
+}

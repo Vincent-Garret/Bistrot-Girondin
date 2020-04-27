@@ -1,6 +1,13 @@
 {% extends 'Admin/base.html.twig' %}
     {% block content %}
-        <h2>Vos Vins : </h2>
+        <div class="addList xLarge-4">
+            <ul>
+                <li><a href="">Ajouter une région</a></li>
+                <li><a href="">Ajouter une appellation</a></li>
+                <li><a href="">Ajouter un vin</a></li>
+            </ul>
+        </div>
+        <h2 class="wineTitle">Vos Vins : </h2>
         {% for message in app.flashes('success') %}
             <div class="flash-notice">
                 {{ message }}
@@ -8,16 +15,16 @@
         {% endfor %}
 
         {% for color in colors %}
-            <h1>{{ color.name }}</h1>
+            <h1>{{ color.name | upper}}</h1>
             {% for region in regions %}
                 {% if color.name == 'Rouge' %}
                     {% if region.appellations | length > 0 %}
-                        <h2>{{ region.name }}</h2>
+                        <h2>{{ region.name | upper }}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
                         {% for wine in appellation.wines %}
                                 {% if wine.color.name == 'Rouge' %}
-                                    <h3>{{ appellation.name }}</h3>
+                                    <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }}
                                         <span class="modif">
                                             <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
@@ -30,12 +37,12 @@
                 {% endif %}
                 {% if color.name == 'Blanc' %}
                     {% if region.appellations | length > 0 %}
-                        <h2>{{ region.name }}</h2>
+                        <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
                         {% for wine in appellation.wines %}
                             {% if wine.color.name == 'Blanc' %}
-                                <h3>{{ appellation.name }}</h3>
+                                <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }}
                                         <span class="modif">
                                             <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
@@ -48,12 +55,12 @@
                 {% endif %}
                 {% if color.name == 'Rosé' %}
                     {% if region.appellations | length > 0 %}
-                        <h2>{{ region.name }}</h2>
+                        <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
                         {% for wine in appellation.wines %}
                             {% if wine.color.name == 'Rosé' %}
-                                <h3>{{ appellation.name }}</h3>
+                                <h3>{{ appellation.name | upper }}</h3>
                                 <p class="wine">{{ wine.name }}
                                     <span class="modif">
                                         <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
