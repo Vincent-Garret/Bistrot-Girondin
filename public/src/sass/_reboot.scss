@@ -9,7 +9,6 @@ h6 {
 }
 
 p,
-a,
 li,
 select,
 input,
@@ -44,6 +43,7 @@ li {
 a {
   color: $jauneText;
   transition: all linear 0.15s;
+  text-decoration: none;
 }
 
 a:hover {
