@@ -17,7 +17,7 @@
                     {{ form_errors(reservationForm.lastName) }}
 
                     {{ form_label(reservationForm.number) }}
-                    {{ form_widget(reservationForm.number) }}
+                    {{ form_widget(reservationForm.number,{'attr' : {'class' : 'labelClass' }}) }}
                     {{ form_errors(reservationForm.number) }}
 
                     {{ form_label(reservationForm.time) }}

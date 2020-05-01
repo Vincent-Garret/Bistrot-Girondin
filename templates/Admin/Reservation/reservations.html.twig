@@ -17,7 +17,7 @@
                     </p>
                     <div class="info">
                         <p>Nombre de personnes : {{ reservation.number }}</p>
-                        <p>Date et heure : {{ reservation.time | date}}</p>
+                        <p>Date et heure : {{ reservation.time | date('d/m/Y \\à H:i')}}</p>
                         <p>Mail : {{ reservation.mail }}</p>
                         <p>Téléphone : 0{{ reservation.telephone }}</p>
                         {% if reservation.commentary %}

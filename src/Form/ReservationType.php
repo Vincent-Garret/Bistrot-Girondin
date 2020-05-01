@@ -24,7 +24,8 @@ class ReservationType extends AbstractType
             ->add('name')
             ->add('lastName')
             ->add('number', ChoiceType::class,[
-                'choices' => [1 => 1,
+                'choices' => [
+                    1 => 1,
                     2 => 2,
                     3 => 3,
                     4 => 4,
@@ -37,14 +38,15 @@ class ReservationType extends AbstractType
                 'expanded' => true,
                 'required' =>true,
                 'choice_value'=> null,
-            ])
+                ])
 
             ->add('time', DateTimeType::class,[
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                     'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
                 ],
-                'widget' => 'single_text'
+                'widget' => 'single_text',
+                'label' => 'Date'
             ])
             ->add('mail')
             ->add('telephone', TelType::class)
