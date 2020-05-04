@@ -45,8 +45,9 @@ class ReservationType extends AbstractType
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                     'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
                 ],
-                'widget' => 'single_text',
-                'label' => 'Date'
+                'date_widget' => "single_text",
+                'time_widget' => "single_text",
+                'label' => 'Date et Heure'
             ])
             ->add('mail')
             ->add('telephone', TelType::class)

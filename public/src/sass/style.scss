@@ -166,3 +166,34 @@ input[type=radio] {
     cursor: default;
   }
 }
+.entete {
+  background-image: url(../../img/accueil.png);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+.bande{
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+.modal{
+  width: 50%;
+  background-color: $vertPrimaire;
+  text-align: center;
+  padding-top: 50px;
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  transition: all 0.8s ease-out;
+
+}
+.open-modal{
+  display: block;
+  opacity: 1;
+}
+
+.bande li{
+  font-size: 30px;
+}
+
