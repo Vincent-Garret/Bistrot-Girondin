@@ -13,4 +13,12 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    $(".entete").css({
+        backgroundSize: (100 + scroll/5)  + "%",
+        backgroundPositionY: (-550 + scroll/3)
+    });
+});
+
 
