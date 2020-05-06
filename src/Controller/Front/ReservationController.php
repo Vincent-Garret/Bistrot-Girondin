@@ -47,7 +47,7 @@ class ReservationController extends AbstractController
             $this->addFlash('success', 'Votre réservation a bien été enregistrée !');
         }
         return $this->render('Front/Reservation.html.twig',[
-            'reservationForm' => $reservationForm->createView()
+            'reservationForm' => $reservationForm->createView(),
         ]);
     }
 }

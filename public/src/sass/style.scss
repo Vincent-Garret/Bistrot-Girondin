@@ -167,7 +167,7 @@ input[type=radio] {
   }
 }
 .entete {
-  background-image: url(../../img/entree.jpg);
+  background-image: url(../../img/entreeModif.png);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -182,6 +182,7 @@ input[type=radio] {
   padding-top: 10px;
   padding-left: 5px;
   background-color: $bande;
+  z-index: 20;
 }
 .bande a{
   border: 1px $jauneText solid;
@@ -199,7 +200,8 @@ input[type=radio] {
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease-out;
-
+  color: $jauneText;
+  padding-top: 20px;
 }
 .open-modal{
   display: block;
@@ -220,5 +222,120 @@ input[type=radio] {
 .sectionHome p{
   text-align: center;
   padding: 5px 20px;
+}
+
+footer{
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: $porte;
+  color: $jauneText;
+}
+
+.sectionCarousel{
+  margin-top: 50px;
+}
+
+.icon{
+  justify-content: space-around;
+}
+
+.sliderItem {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  transform-origin: 50% 50%;
+  transform: scale(0.85);
+  transition: all linear 0.5s;
+  box-shadow: 0 0 10px transparent;
+}
+
+.center .sliderItem {
+  transform: scale(1)!important;
+  box-shadow: 0 0 10px $vertSecondaire!important;
+}
+
+.sliderItem a {
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+}
+
+.sliderDetails {
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid #F1F1F1;
+  border-bottom: 1px solid #F1F1F1;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.owl-nav {
+  position: absolute;
+  top: 15px;
+  z-index: 3;
+  left: 0;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 5px;
+  z-index: 3;
+  left: 0;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-nav button, .owl-dots button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $vertSecondaire!important;
+  border-radius: 100px;
+  border: 1px solid #F1F1F1!important;
+  outline: none;
+}
+
+.owl-nav button {
+  width: 40px;
+  height: 40px;
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: all linear 0.2s;
+}
+
+.owl-nav button:hover {
+  transform: scale(1.2);
+}
+
+.owl-dots button {
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  transition: all linear 0.2s;
+}
+
+.owl-nav button img {
+  filter: invert(1);
+}
+
+.owl-dots .active {
+  background-color: $jauneText!important;
 }
 
