@@ -89,10 +89,5 @@ class Food
 
         return $this;
     }
-    
-
-
-
-
 
 }

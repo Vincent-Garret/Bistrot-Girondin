@@ -1,0 +1,18 @@
+{% extends 'Front/frontBase.html.twig' %}
+    {% block content %}
+        {#Je fais une boucle fort et un if pour afficher le nom de mon type
+suivi DES noms de plats #}
+        {% for type in types %}
+            <div class="xLarge-10 foodList">
+                <h2>{{ type.type | upper }}</h2>
+                {% for food in type.foods %}
+                    <p class="food">{{ food.name }} : {{ food.price }} &euro;</p>
+                    {% for message in app.flashes('success') %}
+                        <div class="flash-notice">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endblock %}

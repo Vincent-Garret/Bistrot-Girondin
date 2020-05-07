@@ -1,0 +1,47 @@
+{% extends 'Front/frontBase.html.twig' %}
+    {% block content %}
+        {% for color in colors %}
+            <h1>{{ color.name | upper}}</h1>
+            {% for region in regions %}
+                {% if color.name == 'Rouge' %}
+                    {% if region.appellations | length > 0 %}
+                        <h2>{{ region.name | upper }}</h2>
+                    {% endif %}
+                    {% for appellation in region.appellations %}
+                        {% for wine in appellation.wines %}
+                            {% if wine.color.name == 'Rouge' %}
+                                <h3>{{ appellation.name | upper }}</h3>
+                                <p class="wine">{{ wine.name }} {{ wine.price }} &euro;</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+                {% if color.name == 'Blanc' %}
+                    {% if region.appellations | length > 0 %}
+                        <h2>{{ region.name | upper}}</h2>
+                    {% endif %}
+                    {% for appellation in region.appellations %}
+                        {% for wine in appellation.wines %}
+                            {% if wine.color.name == 'Blanc' %}
+                                <h3>{{ appellation.name | upper }}</h3>
+                                <p class="wine">{{ wine.name }}  {{ wine.price }} &euro;</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+                {% if color.name == 'Rosé' %}
+                    {% if region.appellations | length > 0 %}
+                        <h2>{{ region.name | upper}}</h2>
+                    {% endif %}
+                    {% for appellation in region.appellations %}
+                        {% for wine in appellation.wines %}
+                            {% if wine.color.name == 'Rosé' %}
+                                <h3>{{ appellation.name | upper }}</h3>
+                                <p class="wine">{{ wine.name }}   {{ wine.price }} &euro;</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endblock %}

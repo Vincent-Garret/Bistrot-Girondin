@@ -35,16 +35,16 @@
 </head>
 <body>
     <header class="entete" id="entete">
-        <div class="flex bande xLarge-12 ">
-            <div class="xLarge-1">
+        <div class="flex bande xLarge-12 large-12">
+            <div class="xLarge-1 medium-2 large-2">
                 <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
             </div>
-            <div class="xLarge-7">
+            <div class="xLarge-7 large-9">
                 <ul class="nav flex">
-                    <li class="xLarge-3"><a href="" class="index">Accueil</a></li>
+                    <li class="xLarge-3"><a href="{{ path('home') }}" class="index">Accueil</a></li>
                     <li class="xLarge-3"><a href="">La Carte</a></li>
                     <li class="xLarge-3"><a href="">Les Vins</a></li>
-                    <li class="xLarge-3"><a href="">Réserver</a></li>
+                    <li class="xLarge-3"><a href="{{ path('Reservation') }}">Réserver</a></li>
                 </ul>
             </div>
             <div class="menu-btn">
@@ -65,14 +65,14 @@
     {% block content %}
     {% endblock %}
     <footer class="flex footer">
-        <ul class="xLarge-3">
+        <ul class="xLarge-3 small-4 medium-3 large-3">
             <li>Mentions légales</li>
             <li>Adresse</li>
             <li>Contacts</li>
         </ul>
-        <ul class="flex xLarge-3 icon">
-            <li class="xLarge-2"><a href=""><img src="{{ asset('img/facebook.png') }}" alt="" class="img-fluid"></a></li>
-            <li class="xLarge-2"><a href=""><img src="{{ asset('img/instagram.png') }}" alt="" class="img-fluid"></a></li>
+        <ul class="flex xLarge-3 small-3 medium-2 large-2 icon">
+            <li class="xLarge-2 small-4 medium-3 large-3"><a href=""><img src="{{ asset('img/facebook.png') }}" alt="" class="img-fluid"></a></li>
+            <li class="xLarge-2 small-4 medium-3 large-3"><a href=""><img src="{{ asset('img/instagram.png') }}" alt="" class="img-fluid"></a></li>
         </ul>
     </footer>
     <script type="text/javascript" src="{{ asset('js/owl.carousel.js') }}"></script>
