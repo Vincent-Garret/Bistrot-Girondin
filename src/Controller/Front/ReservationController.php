@@ -43,7 +43,7 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
             
-
+            //redirect to route
             $this->addFlash('success', 'Votre réservation a bien été enregistrée !');
         }
         return $this->render('Front/Reservation.html.twig',[
