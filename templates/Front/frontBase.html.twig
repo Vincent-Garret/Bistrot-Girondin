@@ -42,8 +42,8 @@
             <div class="xLarge-7 large-9">
                 <ul class="nav flex">
                     <li class="xLarge-3"><a href="{{ path('home') }}" class="index">Accueil</a></li>
-                    <li class="xLarge-3"><a href="">La Carte</a></li>
-                    <li class="xLarge-3"><a href="">Les Vins</a></li>
+                    <li class="xLarge-3"><a href="{{ path('food_list') }}">La Carte</a></li>
+                    <li class="xLarge-3"><a href="{{ path('wine_list') }}">Les Vins</a></li>
                     <li class="xLarge-3"><a href="{{ path('Reservation') }}">Réserver</a></li>
                 </ul>
             </div>
@@ -71,8 +71,8 @@
             <li>Contacts</li>
         </ul>
         <ul class="flex xLarge-3 small-3 medium-2 large-2 icon">
-            <li class="xLarge-2 small-4 medium-3 large-3"><a href=""><img src="{{ asset('img/facebook.png') }}" alt="" class="img-fluid"></a></li>
-            <li class="xLarge-2 small-4 medium-3 large-3"><a href=""><img src="{{ asset('img/instagram.png') }}" alt="" class="img-fluid"></a></li>
+            <li class="xLarge-2 small-4 medium-3 large-3"><a href="https://www.facebook.com/bigbistrotgirondin/" target="_blank"><img src="{{ asset('img/facebook.png') }}" alt="" class="img-fluid"></a></li>
+            <li class="xLarge-2 small-4 medium-3 large-3"><a href="https://www.instagram.com/bigbistrotgirondin/?hl=fr" target="_blank"><img src="{{ asset('img/instagram.png') }}" alt="" class="img-fluid"></a></li>
         </ul>
     </footer>
     <script type="text/javascript" src="{{ asset('js/owl.carousel.js') }}"></script>

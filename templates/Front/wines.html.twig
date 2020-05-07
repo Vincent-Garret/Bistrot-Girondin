@@ -5,8 +5,9 @@
             {% for region in regions %}
                 {% if color.name == 'Rouge' %}
                     {% if region.appellations | length > 0 %}
-                        <h2>{{ region.name | upper }}</h2>
-                    {% endif %}
+                    <div class="wineList xLarge-10">
+                    <h2>{{ region.name | upper }}</h2>
+                {% endif %}
                     {% for appellation in region.appellations %}
                         {% for wine in appellation.wines %}
                             {% if wine.color.name == 'Rouge' %}
@@ -15,10 +16,12 @@
                             {% endif %}
                         {% endfor %}
                     {% endfor %}
+                    </div>
                 {% endif %}
                 {% if color.name == 'Blanc' %}
                     {% if region.appellations | length > 0 %}
-                        <h2>{{ region.name | upper}}</h2>
+                    <div class="wineList xLarge-10">
+                    <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
                         {% for wine in appellation.wines %}
@@ -28,9 +31,11 @@
                             {% endif %}
                         {% endfor %}
                     {% endfor %}
+                    </div>
                 {% endif %}
                 {% if color.name == 'Rosé' %}
                     {% if region.appellations | length > 0 %}
+                        <div class="wineList xLarge-10">
                         <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
@@ -41,6 +46,7 @@
                             {% endif %}
                         {% endfor %}
                     {% endfor %}
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
