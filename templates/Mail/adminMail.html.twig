@@ -1,0 +1,5 @@
+Bonjour,
+Vous avez une nouvelle réservation le {{ time | date('d/m/Y \\à H:i') }} pour {{ number }} personnes au nom de {{ lastName }}
+{% if commentary %}
+    avec le message suivant : {{ commentary }}
+{% endif %}

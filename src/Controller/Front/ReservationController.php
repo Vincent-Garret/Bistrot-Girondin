@@ -36,7 +36,6 @@ class ReservationController extends AbstractController
         $reservation = new Reservation();
 
         //je cherche le champ mail dans mon form
-        $mail = $reservationRepository->find('mail');
         $reservationForm = $this->createForm(ReservationType::class, $reservation);
         $reservationForm->handleRequest($request);
 
@@ -45,16 +44,31 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
             $mail = $reservationForm['mail']->getData();
+            $lastName = $reservationForm['lastName']->getData();
+            $number = $reservationForm['number']->getData();
+            $time = $reservationForm['time']->getData();
+            $commentary = $reservationForm['commentary']->getData();
             //mailer
             $message = (new \Swift_Message('Hello Email'))
                 ->setFrom('bistrotgirondin33@gmail.com')
                 ->setTo($mail)
-                ->setBody('hello world');
+                ->setSubject('Votre réservation')
+                ->setBody($this->renderView('Mail/frontMail.html.twig',
+                    ['lastName' => $lastName,
+                    'number' => $number,
+                    'time' => $time
+                ]));
 
             $autoMessage =( new \Swift_Message('Nouvelle réservation'))
                 ->setFrom('bistrotgirondin@gmail.com')
                 ->setTo('bistrotgirondin@gmail.com')
-                ->setBody('Nouvelle réservation');
+                ->setSubject('Nouvelle réservation')
+                ->setBody($this->renderView('Mail/adminMail.html.twig',
+                    ['lastName' => $lastName,
+                        'number' => $number,
+                        'time' => $time,
+                        'commentary' => $commentary
+                    ]));
 
             $this->addFlash('success', 'Votre réservation a bien été enregistrée !');
             $mailer->send($message);
