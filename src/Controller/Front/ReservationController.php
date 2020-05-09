@@ -30,21 +30,36 @@ class ReservationController extends AbstractController
      */
     public function reservation(Request $request,
                                 EntityManagerInterface $entityManager,
-                                ReservationRepository $reservationRepository
-                                ){
+                                ReservationRepository $reservationRepository,
+                                \Swift_Mailer $mailer){
 
         $reservation = new Reservation();
 
+        //je cherche le champ mail dans mon form
+        $mail = $reservationRepository->find('mail');
         $reservationForm = $this->createForm(ReservationType::class, $reservation);
         $reservationForm->handleRequest($request);
 
         if ($reservationForm->isSubmitted() && $reservationForm->isValid()) {
-            // je persiste
+            // je persiste et je flush
             $entityManager->persist($reservation);
             $entityManager->flush();
-            
-            //redirect to route
+            $mail = $reservationForm['mail']->getData();
+            //mailer
+            $message = (new \Swift_Message('Hello Email'))
+                ->setFrom('bistrotgirondin33@gmail.com')
+                ->setTo($mail)
+                ->setBody('hello world');
+
+            $autoMessage =( new \Swift_Message('Nouvelle réservation'))
+                ->setFrom('bistrotgirondin@gmail.com')
+                ->setTo('bistrotgirondin@gmail.com')
+                ->setBody('Nouvelle réservation');
+
             $this->addFlash('success', 'Votre réservation a bien été enregistrée !');
+            $mailer->send($message);
+            $mailer->send($autoMessage);
+
         }
         return $this->render('Front/Reservation.html.twig',[
             'reservationForm' => $reservationForm->createView(),
