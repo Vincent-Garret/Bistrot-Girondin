@@ -13,8 +13,8 @@
   .xLarge-11 {width: 91.66%;}
   .xLarge-12 {width: 100%;}
 
-  #burger {
-    display: none;
+  .menu-btn{
+    visibility: hidden!important;
   }
 
   nav ul {
@@ -67,6 +67,10 @@
   .nav a{
     visibility: hidden;
   }
+
+  .imgForm{
+    display: none!important;
+  }
 }
 
 @media only screen and (min-width: 260px) and (max-width: 519px) {
@@ -85,7 +89,11 @@
   .small-12 {width: 100%;}
 
   .nav a{
-    visibility: hidden;
+    display:none;
+  }
+  .modal{
+    left: 25% !important;
+    width: 100%!important;
   }
   .entete {
     background-image: unset!important;
@@ -97,6 +105,10 @@
   .sectionPhoto{
     display: none!important;
   }
+  .imgForm{
+    display: none!important;
+  }
+
 
 
 }

@@ -166,6 +166,9 @@ input[type=radio] {
     cursor: default;
   }
 }
+.menu-btn{
+  margin-right: 30px;
+}
 .entete {
   background-image: url(../../img/entreeModif.png);
   height: 100vh;
@@ -191,20 +194,21 @@ input[type=radio] {
 }
 
 .modal{
-  width: 50%;
   background-color: $vertPrimaire;
   text-align: center;
-  padding-top: 50px;
   position: fixed;
   left: 50%;
+  top: 0;
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease-out;
   color: $jauneText;
-  padding-top: 20px;
 }
+.modal li{
+  margin: 30px auto;
+}
+
 .open-modal{
-  display: block;
   visibility: visible;
   opacity: 1;
 }
@@ -228,7 +232,7 @@ footer{
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background-color: $porte;
+  background-color: $vertPrimaire;
   color: $jauneText;
 }
 

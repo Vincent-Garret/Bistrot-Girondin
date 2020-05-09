@@ -36,7 +36,7 @@
 <body>
     <header class="entete" id="entete">
         <div class="flex bande xLarge-12 large-12">
-            <div class="xLarge-1 medium-2 large-2">
+            <div class="xLarge-1 medium-2 large-2 small-3">
                 <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
             </div>
             <div class="xLarge-7 large-9">
@@ -51,12 +51,11 @@
                 <div class="menu-btn__burger"></div>
             </div>
             <div class="modal">
-                <h1>Bienvenue</h1>
                 <ul>
-                    <li>Acceuil</li>
-                    <li>La Carte</li>
-                    <li>Les Vins</li>
-                    <li>Réserver</li>
+                    <li><a href="{{ path('home') }}">Acceuil</a></li>
+                    <li><a href="{{ path('food_list') }}">La Carte</a></li>
+                    <li><a href="{{ path('wine_list') }}">Les Vins</a></li>
+                    <li><a href="{{ path('Reservation') }}">Réserver</a></li>
                 </ul>
 
             </div>
