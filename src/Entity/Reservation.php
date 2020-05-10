@@ -35,6 +35,10 @@ class Reservation
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\GreaterThan("+5 hours")
+     * @Assert\NotBlank
+     * @Assert\Expression("this.checkTime()",
+     *     message = "Resever aux bonnes heures")
      */
     private $time;
 
@@ -140,5 +144,19 @@ class Reservation
         $this->telephone = $telephone;
 
         return $this;
+    }
+
+    public function checkTime(){
+        $heure = $this->getTime()->format('H:i');
+        $ouvertureMidi = new \DateTime('12:00');
+        $fermetureMidi = new \DateTime('14:00');
+        $ouvertureSoir = new \DateTime('19:00');
+        $fermetureSoir = new \DateTime('22:00');
+        dump($heure);
+        if(($heure >= $ouvertureMidi->format('H:i') && $heure <= $fermetureMidi->format('H:i'))
+            || ($heure >= $ouvertureSoir->format('H:i') && $heure <= $fermetureSoir->format('H:i'))){
+            return true;
+        }
+        return false;
     }
 }

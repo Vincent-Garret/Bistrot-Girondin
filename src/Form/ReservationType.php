@@ -46,7 +46,13 @@ class ReservationType extends AbstractType
                     'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
                 ],
                 'date_widget' => "single_text",
-                'time_widget' => "single_text",
+                'time_widget' => "choice",
+                'minutes' => [
+                    0, 15, 30, 45
+                ],
+                'hours' => [
+                    12,13,14,19,20,21,22
+                ],
                 'label' => 'Date et Heure'
             ])
             ->add('mail')
