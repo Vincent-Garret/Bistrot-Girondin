@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Reservation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Reservation|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,22 @@ class ReservationRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Reservation::class);
+    }
+
+    public function getActiveReservation()
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->Where( 'r.time >= :now')
+            ->setParameter('now',new \DateTime('now'));
+            return $qb->getQuery()->getArrayResult();
+    }
+
+    public function getNonActiveReservation()
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->Where( 'r.time < :now')
+            ->setParameter('now',new \DateTime('now'));
+        return $qb->getQuery()->getArrayResult();
     }
 
     // /**
