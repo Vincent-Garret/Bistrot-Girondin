@@ -66,6 +66,26 @@
   color: $vertPrimaire;
   font-size: 20px;
 }
+
+.frontForm h1{
+  padding-top: 0;
+  margin-top: 0;
+  color: $vertPrimaire;
+}
+
+#reservation_time_time_hour{
+  Border : 1px solid $vertSecondaire;
+  border-radius: 5px;
+}
+
+#reservation_time_time_minute{
+  Border : 1px solid $vertSecondaire;
+  border-radius: 5px;
+}
+#reservation_time{
+  display: contents;
+}
+
 .divForm{
   display: flex;
   justify-content: center;
@@ -103,9 +123,6 @@
 }
 .imgForm{
   display: flex;
-}
-.frontForm h1{
-  color: $vertPrimaire;
 }
 
 .frontForm input{
