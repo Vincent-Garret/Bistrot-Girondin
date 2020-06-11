@@ -14,8 +14,8 @@ suivi DES noms de plats #}
                 {% for food in type.foods %}
                     <p class="food">{{ food.name }} : {{ food.price }} &euro;
                         <span class="modif">
-                            <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer ce plat</a>
-                            <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier le nom de ce plat</a>
+                            <a href="{{ path('admin_delete_food', {'id': food.id }) }}">Supprimer</a>
+                            <a href="{{ path('admin_update_food', {'id': food.id }) }}">Modifier</a>
                         </span>
                     </p>
                     {% for message in app.flashes('success') %}

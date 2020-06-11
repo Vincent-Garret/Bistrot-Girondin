@@ -30,6 +30,7 @@ class Reservation
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank
+     * @Assert\Range(max="8")
      */
     private $number;
 
@@ -43,7 +44,7 @@ class Reservation
     private $time;
 
     /**
-     * @ORM\Column(type="string", length=500, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $commentary;
 

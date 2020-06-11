@@ -3,11 +3,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Appellation;
-use App\Entity\Region;
 use App\Entity\Wine;
-use App\Form\AppellationType;
-use App\Form\RegionType;
 use App\Form\WineType;
 use App\Repository\AppellationRepository;
 use App\Repository\ColorRepository;
@@ -18,7 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 class WineController extends AbstractController
 {

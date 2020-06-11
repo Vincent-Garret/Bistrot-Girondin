@@ -7,12 +7,12 @@
             {{ form_start(reservationForm, {'attr': {'class': 'frontForm xLarge-6 large-6 medium-12 small-12'}}) }}
                 <h1>Votre Réservation</h1>
             {# form_label permet de rendre le label d'un champs de formulaire #}
-                    {{ form_label(reservationForm.name) }}
+                    {{ form_label(reservationForm.name, 'Nom') }}
                     {# form_widget permet de rendre l'input d'un formulaire #}
                     {{ form_widget(reservationForm.name) }}
                     {{ form_errors(reservationForm.name) }}
 
-                    {{ form_label(reservationForm.lastName) }}
+                    {{ form_label(reservationForm.lastName, 'Prénom') }}
                     {{ form_widget(reservationForm.lastName) }}
                     {{ form_errors(reservationForm.lastName) }}
 
@@ -28,11 +28,11 @@
                     {{ form_widget(reservationForm.mail) }}
                     {{ form_errors(reservationForm.mail) }}
 
-                    {{ form_label(reservationForm.telephone) }}
+                    {{ form_label(reservationForm.telephone, 'Téléphone') }}
                     {{ form_widget(reservationForm.telephone) }}
                     {{ form_errors(reservationForm.telephone) }}
 
-                    {{ form_label(reservationForm.commentary) }}
+                    {{ form_label(reservationForm.commentary, 'Commentaire') }}
                     {{ form_widget(reservationForm.commentary) }}
                     {{ form_errors(reservationForm.commentary) }}
 

@@ -27,8 +27,8 @@
                                     <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }} {{ wine.price }} &euro;
                                         <span class="modif">
-                                            <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
-                                            <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer ce vin</a>
+                                            <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>
+                                            <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer</a>
                                         </span>
                                     </p>
                                 {% endif %}
@@ -45,8 +45,8 @@
                                 <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }}  {{ wine.price }} &euro;
                                         <span class="modif">
-                                            <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
-                                            <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer ce vin</a>
+                                            <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>
+                                            <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer</a>
                                         </span>
                                     </p>
                             {% endif %}
@@ -63,8 +63,8 @@
                                 <h3>{{ appellation.name | upper }}</h3>
                                 <p class="wine">{{ wine.name }}   {{ wine.price }} &euro;
                                     <span class="modif">
-                                        <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier le nom du vin</a>
-                                        <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer ce vin</a>
+                                        <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>
+                                        <a href="{{ path('admin_delete_wine', {'id':wine.id}) }}">Supprimer</a>
                                     </span>
                                 </p>
                             {% endif %}

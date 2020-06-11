@@ -49,7 +49,7 @@ class ReservationController extends AbstractController
             $time = $reservationForm['time']->getData();
             $commentary = $reservationForm['commentary']->getData();
             //mailer
-            $message = (new \Swift_Message('Hello Email'))
+            $message = (new \Swift_Message('Votre réservation'))
                 ->setFrom('bistrotgirondin33@gmail.com')
                 ->setTo($mail)
                 ->setSubject('Votre réservation')
