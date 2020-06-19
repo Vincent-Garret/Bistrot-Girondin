@@ -3,27 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
     </head>
     <body>
-        <header class="baseHeader xLarge-12">
-            <ul class="listHeader xLarge-11">
-                <li class="xLarge-2"><img src=" {{ asset('img/logo.png') }} " alt="" class="xLarge-4"></li>
-                <li class="xLarge-2"><a href="{{ path('admin_home') }}">Accueil</a></li>
-                <li class="xLarge-2"><a href="{{ path('admin_wine_list') }}">Vos vins</a></li>
-                <li class="xLarge-2"><a href="{{ path('admin_food_list') }}">Vos plats</a></li>
-                <li class="xLarge-2"><a href="{{ path('admin_reservation_list') }}">Vos réservations</a></li>
+        <header class="baseHeader container-fluid">
+            <ul class="listHeader col-12 row">
+                <li class="col-2"><img src=" {{ asset('img/logo.png') }} " alt="" class="xLarge-4"></li>
+                <li class="col-2"><a href="{{ path('admin_home') }}">Accueil</a></li>
+                <li class="col-2"><a href="{{ path('admin_wine_list') }}">Vos vins</a></li>
+                <li class="col-2"><a href="{{ path('admin_food_list') }}">Vos plats</a></li>
+                <li class="col-2"><a href="{{ path('admin_reservation_list') }}">Vos réservations</a></li>
             </ul>
         </header>
                 {% block content %}
                 {% endblock %}
-        <footer class="baseFooter">
-            <ul class="listFooter xLarge-12">
-                <li class="xLarge-2"><img src=" {{ asset('img/logo.png') }} " alt="" class="xLarge-4"></li>
-                <li class="xLarge-2"><a href="">Les vins</a></li>
-                <li class="xLarge-2"><a href="">Les plats</a></li>
-                <li class="xLarge-2"><a href="">Vos réservations</a></li>
+        <footer class="baseFooter container-fluid">
+            <ul class="listFooter col-12">
+                <li class="col-2"><img src=" {{ asset('img/logo.png') }} " alt="" class="xLarge-4"></li>
+                <li class="col-2"><a href="">Les vins</a></li>
+                <li class="col-2"><a href="">Les plats</a></li>
+                <li class="col-2"><a href="">Vos réservations</a></li>
             </ul>
         </footer>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

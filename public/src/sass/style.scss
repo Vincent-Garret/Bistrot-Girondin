@@ -13,6 +13,10 @@
   padding-top: 5px;
   height: 15vh;
 }
+
+.bande{
+  justify-content: space-between;
+}
 .baseHeader li,
 .baseFooter li{
   font-size: 25px!important;
@@ -232,7 +236,7 @@ input[type=radio] {
 }
 
 .bande li{
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .sectionHome{

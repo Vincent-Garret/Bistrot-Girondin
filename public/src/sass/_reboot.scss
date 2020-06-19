@@ -27,8 +27,10 @@ em {
 }
 
 p,
-h1 {
-  color: $jauneText;
+h1,
+label{
+  color: $vertSecondaire;
+  font-family: 'Lexend Tera', sans-serif;
 }
 
 ul {
@@ -39,6 +41,7 @@ li {
   list-style: none;
   font-size: 20px;
 }
+
 
 a {
   color: $jauneText;
@@ -82,6 +85,13 @@ body{
 .wine{
   margin-left: 25px;
 }
+
+.nav li,
+.modal li{
+  text-transform: uppercase;
+  font-family: 'Lexend Tera', sans-serif;
+}
+
 
 .listHeader li:hover,
 .listFooter li:hover{

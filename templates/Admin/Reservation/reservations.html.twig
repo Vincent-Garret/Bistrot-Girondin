@@ -6,6 +6,10 @@
                 {{ message }}
             </div>
         {% endfor %}
+        <div>
+            <a href="{{ path ('admin_active_reservation') }}">Réservations actives</a>
+            <a href="{{ path ('admin_non_active_reservation') }}">Réservations passées</a>
+        </div>
         <div class="reservations">
             {% for reservation in reservations %}
                 <div class="reservation xLarge-3">

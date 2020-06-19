@@ -34,7 +34,7 @@ class Wine
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Appellation", inversedBy="wines")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $appellation;
 

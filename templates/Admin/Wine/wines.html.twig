@@ -2,9 +2,9 @@
     {% block content %}
         <div class="addList xLarge-4">
             <ul>
-                <li><a href="">Ajouter une région</a></li>
-                <li><a href="">Ajouter une appellation</a></li>
-                <li><a href="">Ajouter un vin</a></li>
+                <li><a href="{{ path('admin_region_insert') }}">Ajouter une région</a></li>
+                <li><a href="{{ path('admin_insert_appellation') }}">Ajouter une appellation</a></li>
+                <li><a href="{{ path ('admin_insert_wine') }}">Ajouter un vin</a></li>
             </ul>
         </div>
         <h2 class="wineTitle">Vos Vins : </h2>
@@ -22,9 +22,9 @@
                         <h2>{{ region.name | upper }}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
+                        <h3>{{ appellation.name | upper }}</h3>
                         {% for wine in appellation.wines %}
                                 {% if wine.color.name == 'Rouge' %}
-                                    <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }} {{ wine.price }} &euro;
                                         <span class="modif">
                                             <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>
@@ -40,9 +40,9 @@
                         <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
+                        <h3>{{ appellation.name | upper }}</h3>
                         {% for wine in appellation.wines %}
                             {% if wine.color.name == 'Blanc' %}
-                                <h3>{{ appellation.name | upper }}</h3>
                                     <p class="wine">{{ wine.name }}  {{ wine.price }} &euro;
                                         <span class="modif">
                                             <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>
@@ -58,9 +58,9 @@
                         <h2>{{ region.name | upper}}</h2>
                     {% endif %}
                     {% for appellation in region.appellations %}
+                        <h3>{{ appellation.name | upper }}</h3>
                         {% for wine in appellation.wines %}
                             {% if wine.color.name == 'Rosé' %}
-                                <h3>{{ appellation.name | upper }}</h3>
                                 <p class="wine">{{ wine.name }}   {{ wine.price }} &euro;
                                     <span class="modif">
                                         <a href="{{ path('admin_update_wine', {'id':wine.id}) }}">Modifier</a>

@@ -15,6 +15,7 @@
 
   .menu-btn{
     visibility: hidden!important;
+    display: none!important;
   }
 
   nav ul {
@@ -39,6 +40,7 @@
 
   .menu-btn{
     visibility: hidden!important;
+    display: none!important;
   }
   .nav{
     justify-content: space-around;
@@ -67,10 +69,21 @@
   .nav a{
     visibility: hidden;
   }
-
+  .entete {
+    background-image: unset!important;
+    height: 25vh!important;
+  }
   .imgForm{
     display: none!important;
   }
+  .bande img{
+    width: 150px;
+  }
+  .bande{
+    justify-content: space-between;
+    width: auto;
+  }
+
 }
 
 @media only screen and (min-width: 260px) and (max-width: 519px) {
@@ -92,9 +105,10 @@
     display:none;
   }
   .modal{
-    left: 25% !important;
+    left: 0 !important;
     width: 100%!important;
   }
+
   .entete {
     background-image: unset!important;
     height: 25vh!important;
