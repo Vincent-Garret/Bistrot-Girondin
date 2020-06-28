@@ -29,7 +29,7 @@ em {
 p,
 h1,
 label{
-  color: $vertSecondaire;
+  color: $secondGreen;
   font-family: 'Lexend_Tera', sans-serif;
 }
 
@@ -48,13 +48,13 @@ li {
 
 
 a {
-  color: $jauneText;
+  color: $yellowText;
   transition: all linear 0.15s;
   text-decoration: none;
 }
 
 a:hover {
-  color: $vertSecondaire;
+  color: $secondGreen;
 }
 
 ::-webkit-scrollbar {
@@ -67,12 +67,12 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $jauneText;
+  background-color: $yellowText;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: $vertSecondaire;
+  background-color: $secondGreen;
 }
 
 body{
@@ -117,7 +117,7 @@ body{
 }
 
 .menu-btn__burger {
-  background: $jauneText;
+  background: $yellowText;
   width: 50px;
   height: 6px;
   border-radius: 5px;
@@ -131,7 +131,7 @@ body{
 .menu-btn__burger::after {
   content: '';
   position: absolute;
-  background: $jauneText;
+  background: $yellowText;
   width: 50px;
   height: 6px;
   border-radius: 5px;

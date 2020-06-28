@@ -8,8 +8,8 @@
 .baseFooter{
   display: flex;
   justify-content: center;
-  background-color: $vertPrimaire;
-  color: $jauneText;
+  background-color: $firstGreen;
+  color: $yellowText;
   padding-top: 5px;
   height: 15vh;
 }
@@ -34,7 +34,7 @@
   justify-content: space-around;
 }
 .reservation{
-  border: 1px solid $jauneText;
+  border: 1px solid $yellowText;
   margin: 15px auto;
   border-radius: 8px;
 }
@@ -45,8 +45,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: $vertPrimaire;
-  color: $jauneText;
+  background-color: $firstGreen;
+  color: $yellowText;
   margin-top: 0;
   padding-left: 0;
   border-radius: 8px 8px 0 0;
@@ -58,32 +58,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid $vertPrimaire;
+  border: 2px solid $firstGreen;
   margin: 50px 0;
   padding-bottom: 15px;
   border-radius: 8px;
-  background-color: $jauneText;
+  background-color: $yellowText;
 }
 
 .frontForm label,
 .form label{
-  color: $vertPrimaire;
+  color: $firstGreen;
   font-size: 20px;
 }
 
 .frontForm h1{
   padding-top: 0;
   margin-top: 0;
-  color: $vertPrimaire;
+  color: $firstGreen;
 }
 
 #reservation_time_time_hour{
-  Border : 1px solid $vertSecondaire;
+  Border : 1px solid $secondGreen;
   border-radius: 5px;
 }
 
 #reservation_time_time_minute{
-  Border : 1px solid $vertSecondaire;
+  Border : 1px solid $secondGreen;
   border-radius: 5px;
 }
 #reservation_time{
@@ -97,7 +97,7 @@
 
 .frontForm button,
 .form button{
-  background-color: $vertSecondaire;
+  background-color: $secondGreen;
   Border : 1px solid black;
   Color : white;
   margin-top: 5px;
@@ -113,7 +113,7 @@
   justify-content: space-between;
   border: 2px solid black;
   border-radius: 8px;
-  background-color: $jauneText;
+  background-color: $yellowText;
   margin: 20px auto;
   box-shadow: $boxShadowIn;
 }
@@ -151,7 +151,7 @@
   text-align: center;
 }
 .foodList, .addList, .wineList{
-  border: 2px solid $vertPrimaire;
+  border: 2px solid $firstGreen;
   border-radius: 8px;
   margin: 5% auto;
 }
@@ -163,7 +163,7 @@
   font-size: 30px;
 }
 .info p{
-  color: $vertPrimaire;
+  color: $firstGreen;
 }
 .labelClass{
   padding-top: 15px;
@@ -181,7 +181,7 @@ input[type=radio] {
   display:none;
 
   &:checked + label {
-    background: $vertSecondaire;
+    background: $secondGreen;
     box-shadow: $boxShadowIn;
     color: #fff;
     cursor: default;
@@ -209,13 +209,13 @@ input[type=radio] {
   z-index: 20;
 }
 .bande a{
-  border: 1px $jauneText solid;
+  border: 1px $yellowText solid;
   background-color: rgba(255,255,255,.1);
   padding: 3px 8px;
 }
 
 .modal{
-  background-color: $vertPrimaire;
+  background-color: $firstGreen;
   text-align: center;
   position: fixed;
   left: 50%;
@@ -223,7 +223,7 @@ input[type=radio] {
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease-out;
-  color: $jauneText;
+  color: $yellowText;
   width: 50%;
 }
 .modal li{
@@ -254,8 +254,8 @@ footer{
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background-color: $vertPrimaire;
-  color: $jauneText;
+  background-color: $firstGreen;
+  color: $yellowText;
 }
 
 .sectionCarousel{
@@ -288,7 +288,7 @@ footer{
 
 .center .sliderItem {
   transform: scale(1)!important;
-  box-shadow: 0 0 10px $vertSecondaire!important;
+  box-shadow: 0 0 10px $secondGreen !important;
 }
 
 .sliderItem a {
@@ -336,7 +336,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $vertSecondaire!important;
+  background-color: $secondGreen !important;
   border-radius: 100px;
   border: 1px solid #F1F1F1!important;
   outline: none;
@@ -366,7 +366,7 @@ footer{
 }
 
 .owl-dots .active {
-  background-color: $jauneText!important;
+  background-color: $yellowText !important;
 }
 
 
