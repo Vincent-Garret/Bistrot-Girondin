@@ -19,6 +19,7 @@ class FoodController extends AbstractController
     /**
      * @Route("/admin/foods", name="admin_food_list")
      * @param FoodRepository $foodRepository
+     * @param TypeRepository $typeRepository
      * @return Response
      */
     public function foodList(FoodRepository $foodRepository, TypeRepository $typeRepository)
@@ -47,7 +48,7 @@ class FoodController extends AbstractController
         $foodForm->handleRequest($request);
 
         if ($foodForm->isSubmitted() && $foodForm->isValid()) {
-            // je persiste le book
+            // je persiste le plat
             $entityManager->persist($food);
             $entityManager->flush();
         }

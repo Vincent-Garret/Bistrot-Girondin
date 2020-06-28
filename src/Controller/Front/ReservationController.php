@@ -45,6 +45,7 @@ class ReservationController extends AbstractController
             $entityManager->flush();
             $mail = $reservationForm['mail']->getData();
             $lastName = $reservationForm['lastName']->getData();
+            $name = $reservationForm['name']->getData();
             $number = $reservationForm['number']->getData();
             $time = $reservationForm['time']->getData();
             $commentary = $reservationForm['commentary']->getData();
@@ -56,6 +57,7 @@ class ReservationController extends AbstractController
                 ->setBody($this->renderView('Mail/frontMail.html.twig',
                     ['lastName' => $lastName,
                     'number' => $number,
+                    'name' => $name,
                     'time' => $time
                 ]));
 

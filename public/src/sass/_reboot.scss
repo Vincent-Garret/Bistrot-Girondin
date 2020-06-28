@@ -118,6 +118,7 @@ body{
   height: 6px;
   border-radius: 5px;
   box-shadow: $boxShadowIn;
+  //ease in out = le départ et la fin sont lent
   transition: all .5s ease-in-out;
   z-index: 10;
 }

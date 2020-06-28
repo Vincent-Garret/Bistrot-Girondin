@@ -43,7 +43,7 @@ class ReservationType extends AbstractType
             ->add('time', DateTimeType::class,[
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
-                    'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
+                    'hour' => 'Heure', 'minute' => 'Minute', 'second' => 'Second',
                 ],
                 'date_widget' => "single_text",
                 'time_widget' => "choice",
@@ -58,7 +58,9 @@ class ReservationType extends AbstractType
             ->add('mail')
             ->add('telephone', TelType::class)
             ->add('commentary')
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class,[
+                'label' => 'Valider la réservation'
+            ])
         ;
     }
 

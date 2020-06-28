@@ -67,7 +67,7 @@
     height: 20vh!important;
   }
   .nav a{
-    visibility: hidden;
+    display: none;
   }
   .entete {
     background-image: unset!important;
@@ -76,12 +76,9 @@
   .imgForm{
     display: none!important;
   }
-  .bande img{
-    width: 150px;
-  }
+
   .bande{
     justify-content: space-between;
-    width: auto;
   }
 
 }

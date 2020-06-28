@@ -153,7 +153,6 @@ class Reservation
         $fermetureMidi = new \DateTime('14:00');
         $ouvertureSoir = new \DateTime('19:00');
         $fermetureSoir = new \DateTime('22:00');
-        dump($heure);
         if(($heure >= $ouvertureMidi->format('H:i') && $heure <= $fermetureMidi->format('H:i'))
             || ($heure >= $ouvertureSoir->format('H:i') && $heure <= $fermetureSoir->format('H:i'))){
             return true;
