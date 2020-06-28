@@ -35,7 +35,6 @@ class ReservationController extends AbstractController
 
         $reservation = new Reservation();
 
-        //je cherche le champ mail dans mon form
         $reservationForm = $this->createForm(ReservationType::class, $reservation);
         $reservationForm->handleRequest($request);
 

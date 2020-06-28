@@ -30,7 +30,11 @@ p,
 h1,
 label{
   color: $vertSecondaire;
-  font-family: 'Lexend Tera', sans-serif;
+  font-family: 'Lexend_Tera', sans-serif;
+}
+
+h1{
+  font-family: 'Lexend_Mega', sans-serif;
 }
 
 ul {
@@ -89,7 +93,7 @@ body{
 .nav li,
 .modal li{
   text-transform: uppercase;
-  font-family: 'Lexend Tera', sans-serif;
+  font-family: 'Lexend_Tera', sans-serif;
 }
 
 
