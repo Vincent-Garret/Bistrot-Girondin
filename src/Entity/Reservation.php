@@ -148,13 +148,13 @@ class Reservation
     }
 
     public function checkTime(){
-        $heure = $this->getTime()->format('H:i');
-        $ouvertureMidi = new \DateTime('12:00');
-        $fermetureMidi = new \DateTime('14:00');
-        $ouvertureSoir = new \DateTime('19:00');
-        $fermetureSoir = new \DateTime('22:00');
-        if(($heure >= $ouvertureMidi->format('H:i') && $heure <= $fermetureMidi->format('H:i'))
-            || ($heure >= $ouvertureSoir->format('H:i') && $heure <= $fermetureSoir->format('H:i'))){
+        $time = $this->getTime()->format('H:i');
+        $openingNoon = new \DateTime('12:00');
+        $closingNoon = new \DateTime('14:00');
+        $openingEvening = new \DateTime('19:00');
+        $closingEvening = new \DateTime('22:00');
+        if(($time >= $openingNoon->format('H:i') && $time <= $closingNoon->format('H:i'))
+            || ($time >= $openingEvening->format('H:i') && $time <= $closingEvening->format('H:i'))){
             return true;
         }
         return false;

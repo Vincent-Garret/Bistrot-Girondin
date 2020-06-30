@@ -8,6 +8,7 @@ use App\Repository\FoodRepository;
 use App\Repository\TypeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,8 +57,13 @@ class FoodController extends AbstractController
             'foodForm' => $foodForm->createView()
         ]);
     }
+
     /**
      * @Route("/admin/delete/food/{id}", name="admin_delete_food")
+     * @param FoodRepository $foodRepository
+     * @param EntityManagerInterface $entityManager
+     * @param $id
+     * @return RedirectResponse
      */
     public function deleteFood(FoodRepository $foodRepository,
                                 EntityManagerInterface $entityManager,
